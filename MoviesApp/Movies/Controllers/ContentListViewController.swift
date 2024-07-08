@@ -8,8 +8,8 @@
 import UIKit
 
 class ContentListViewController: UIViewController {
-    var viewTitle: String!
-    var contentType: ContentType!
+    var viewTitle: String = "Home"
+    var contentType: ContentType = .movie
     
     // Outlets
     @IBOutlet weak var collectionView: UICollectionView!
