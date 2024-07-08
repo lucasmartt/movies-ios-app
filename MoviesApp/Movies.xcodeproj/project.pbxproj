@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1F8AD5472BEC3FC80012D740 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AD5462BEC3FC80012D740 /* ContentType.swift */; };
-		1FBA08AD2C2B58790001DD7F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA08AC2C2B58790001DD7F /* TabBarController.swift */; };
 		1FBA08AF2C2B59060001DD7F /* ContentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA08AE2C2B59060001DD7F /* ContentListViewController.swift */; };
 		1FF8CC6F2C1E4FA9009DC53D /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8CC6E2C1E4FA9009DC53D /* ContentService.swift */; };
 		1FF8CC712C1E53CE009DC53D /* ContentSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8CC702C1E53CE009DC53D /* ContentSearchResponse.swift */; };
@@ -25,11 +24,14 @@
 		2E2586E62BB5FA58006EF0BB /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586E32BB5FA58006EF0BB /* ContentDetailViewController.swift */; };
 		2E2586E72BB5FA58006EF0BB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586E42BB5FA58006EF0BB /* FavoritesViewController.swift */; };
 		2E2586ED2BB5FA76006EF0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2586EB2BB5FA76006EF0BB /* Assets.xcassets */; };
+		C0903FFE2C3C1BCA0077AEEE /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0903FFD2C3C1BCA0077AEEE /* Home.storyboard */; };
+		C091EFFA2C3C1E790041F6BE /* ContentDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */; };
+		C0CF0EB92C3C1DB1003C6FBC /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CF0EB82C3C1DB1003C6FBC /* Wishlist.storyboard */; };
+		C0D2FB442C3C1A81009BE8E9 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D2FB432C3C1A81009BE8E9 /* Favorite.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F8AD5462BEC3FC80012D740 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
-		1FBA08AC2C2B58790001DD7F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1FBA08AE2C2B59060001DD7F /* ContentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListViewController.swift; sourceTree = "<group>"; };
 		1FF8CC6E2C1E4FA9009DC53D /* ContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentService.swift; sourceTree = "<group>"; };
 		1FF8CC702C1E53CE009DC53D /* ContentSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSearchResponse.swift; sourceTree = "<group>"; };
@@ -48,6 +50,10 @@
 		2E2586EA2BB5FA76006EF0BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E2586EB2BB5FA76006EF0BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E54F4A82BB5F734007B6D93 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0903FFD2C3C1BCA0077AEEE /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentDetails.storyboard; sourceTree = "<group>"; };
+		C0CF0EB82C3C1DB1003C6FBC /* Wishlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
+		C0D2FB432C3C1A81009BE8E9 /* Favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,10 @@
 			children = (
 				2E2586D52BB5F9DB006EF0BB /* LaunchScreen.storyboard */,
 				2E2586D42BB5F9DB006EF0BB /* Main.storyboard */,
+				C0CF0EB82C3C1DB1003C6FBC /* Wishlist.storyboard */,
+				C0903FFD2C3C1BCA0077AEEE /* Home.storyboard */,
+				C0D2FB432C3C1A81009BE8E9 /* Favorite.storyboard */,
+				C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */,
 				2E2586D62BB5F9DB006EF0BB /* ContentCollectionViewCell */,
 				2E2586D92BB5F9DB006EF0BB /* ContentTableViewCell */,
 			);
@@ -121,7 +131,6 @@
 		2E2586E22BB5FA4E006EF0BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1FBA08AC2C2B58790001DD7F /* TabBarController.swift */,
 				1FBA08AE2C2B59060001DD7F /* ContentListViewController.swift */,
 				2E2586E32BB5FA58006EF0BB /* ContentDetailViewController.swift */,
 				2E2586E42BB5FA58006EF0BB /* FavoritesViewController.swift */,
@@ -225,11 +234,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0903FFE2C3C1BCA0077AEEE /* Home.storyboard in Resources */,
+				C0CF0EB92C3C1DB1003C6FBC /* Wishlist.storyboard in Resources */,
 				2E2586E02BB5F9DB006EF0BB /* ContentTableViewCell.xib in Resources */,
 				2E2586DD2BB5F9DB006EF0BB /* LaunchScreen.storyboard in Resources */,
+				C0D2FB442C3C1A81009BE8E9 /* Favorite.storyboard in Resources */,
 				2E2586ED2BB5FA76006EF0BB /* Assets.xcassets in Resources */,
 				2E2586DC2BB5F9DB006EF0BB /* Main.storyboard in Resources */,
 				2E2586DF2BB5F9DB006EF0BB /* ContentCollectionViewCell.xib in Resources */,
+				C091EFFA2C3C1E790041F6BE /* ContentDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +254,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8AD5472BEC3FC80012D740 /* ContentType.swift in Sources */,
-				1FBA08AD2C2B58790001DD7F /* TabBarController.swift in Sources */,
 				1FBA08AF2C2B59060001DD7F /* ContentListViewController.swift in Sources */,
 				1FF8CC6F2C1E4FA9009DC53D /* ContentService.swift in Sources */,
 				2E2586C82BB5F984006EF0BB /* AppDelegate.swift in Sources */,
@@ -381,7 +393,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8G4UL7Z7AB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Movies/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Movies;
@@ -410,7 +422,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8G4UL7Z7AB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Movies/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Movies;
