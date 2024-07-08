@@ -17,6 +17,8 @@ struct Content: Codable, Equatable {
     let plot: String?
     let poster: String?
     let seasons: String?
+    let director: String?
+    let actors: String?
     
     var isFavorite: Bool = false
     
@@ -30,5 +32,7 @@ struct Content: Codable, Equatable {
         case plot = "Plot"
         case poster = "Poster"
         case seasons = "totalSeasons"
+        case director = "Director"
+        case actors = "Actors"
     }
 }
