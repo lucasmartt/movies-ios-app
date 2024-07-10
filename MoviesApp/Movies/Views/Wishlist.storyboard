@@ -71,11 +71,22 @@
                     <connections>
                         <outlet property="sortButton" destination="zc0-PE-gnq" id="fIM-9I-bMK"/>
                         <outlet property="tableView" destination="ASP-ur-fhb" id="LWW-vL-kSg"/>
+                        <segue destination="7E7-gS-oSp" kind="show" identifier="showContentDetailVC" id="71R-us-Pgt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8x-0I-c6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829.7709923664122" y="1483.8028169014085"/>
+            <point key="canvasLocation" x="830" y="1502"/>
+        </scene>
+        <!--ContentDetails-->
+        <scene sceneID="keZ-o3-Xsz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ContentDetails" id="7E7-gS-oSp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="W00-GZ-ZTT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gl-Te-77a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="1888"/>
         </scene>
     </scenes>
     <resources>

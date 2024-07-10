@@ -12,6 +12,7 @@ class WishListViewController: UIViewController {
     // Search
     private let searchController = UISearchController()
     private var content: [Content] = []
+    private let segueIdentifier = "showContentDetailVC"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,7 @@ class WishListViewController: UIViewController {
         let nib = UINib(nibName: "ContentTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: ContentTableViewCell.identifier)
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     @IBAction func toggleAscending(_ sender: Any) {
@@ -51,6 +53,15 @@ class WishListViewController: UIViewController {
         tableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let contentDetailVC = segue.destination as? ContentDetailViewController,
+              let content = sender as? Content else {
+                  return
+              }
+        
+        contentDetailVC.contentId = content.id
+        contentDetailVC.contentTitle = content.title
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -70,6 +81,15 @@ extension WishListViewController: UITableViewDataSource {
         cell.delegate = self
         cell.setup(content: content)
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension WishListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedContent = content[indexPath.row]
+        performSegue(withIdentifier: segueIdentifier, sender: selectedContent)
     }
 }
 
