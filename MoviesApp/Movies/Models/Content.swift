@@ -18,7 +18,7 @@ struct Content: Codable, Equatable {
     let poster: String?
     let seasons: String?
     
-    var isFavorite: Bool = false
+    var isWished: Bool = false
     
     enum CodingKeys: String, CodingKey {
         case id = "imdbID"

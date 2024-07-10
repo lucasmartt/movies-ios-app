@@ -14,7 +14,7 @@
 		2E2586C82BB5F984006EF0BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586C62BB5F984006EF0BB /* AppDelegate.swift */; };
 		2E2586C92BB5F984006EF0BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586C72BB5F984006EF0BB /* SceneDelegate.swift */; };
 		2E2586D02BB5F9A2006EF0BB /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586CC2BB5F9A2006EF0BB /* Content.swift */; };
-		2E2586D12BB5F9A2006EF0BB /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586CD2BB5F9A2006EF0BB /* FavoriteService.swift */; };
+		2E2586D12BB5F9A2006EF0BB /* WishListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586CD2BB5F9A2006EF0BB /* WishListService.swift */; };
 		2E2586DC2BB5F9DB006EF0BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2586D42BB5F9DB006EF0BB /* Main.storyboard */; };
 		2E2586DD2BB5F9DB006EF0BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2586D52BB5F9DB006EF0BB /* LaunchScreen.storyboard */; };
 		2E2586DE2BB5F9DB006EF0BB /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586D72BB5F9DB006EF0BB /* ContentCollectionViewCell.swift */; };
@@ -22,12 +22,12 @@
 		2E2586E02BB5F9DB006EF0BB /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2586DA2BB5F9DB006EF0BB /* ContentTableViewCell.xib */; };
 		2E2586E12BB5F9DB006EF0BB /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586DB2BB5F9DB006EF0BB /* ContentTableViewCell.swift */; };
 		2E2586E62BB5FA58006EF0BB /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586E32BB5FA58006EF0BB /* ContentDetailViewController.swift */; };
-		2E2586E72BB5FA58006EF0BB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586E42BB5FA58006EF0BB /* FavoritesViewController.swift */; };
+		2E2586E72BB5FA58006EF0BB /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586E42BB5FA58006EF0BB /* WishListViewController.swift */; };
 		2E2586ED2BB5FA76006EF0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2586EB2BB5FA76006EF0BB /* Assets.xcassets */; };
 		C0903FFE2C3C1BCA0077AEEE /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0903FFD2C3C1BCA0077AEEE /* Home.storyboard */; };
 		C091EFFA2C3C1E790041F6BE /* ContentDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */; };
-		C0CF0EB92C3C1DB1003C6FBC /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CF0EB82C3C1DB1003C6FBC /* Wishlist.storyboard */; };
-		C0D2FB442C3C1A81009BE8E9 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D2FB432C3C1A81009BE8E9 /* Favorite.storyboard */; };
+		C0CF0EB92C3C1DB1003C6FBC /* Reviews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CF0EB82C3C1DB1003C6FBC /* Reviews.storyboard */; };
+		C0D2FB442C3C1A81009BE8E9 /* WishList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D2FB432C3C1A81009BE8E9 /* WishList.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,7 @@
 		2E2586C62BB5F984006EF0BB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E2586C72BB5F984006EF0BB /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2E2586CC2BB5F9A2006EF0BB /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
-		2E2586CD2BB5F9A2006EF0BB /* FavoriteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		2E2586CD2BB5F9A2006EF0BB /* WishListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListService.swift; sourceTree = "<group>"; };
 		2E2586D42BB5F9DB006EF0BB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2E2586D52BB5F9DB006EF0BB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E2586D72BB5F9DB006EF0BB /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -46,14 +46,14 @@
 		2E2586DA2BB5F9DB006EF0BB /* ContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
 		2E2586DB2BB5F9DB006EF0BB /* ContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		2E2586E32BB5FA58006EF0BB /* ContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
-		2E2586E42BB5FA58006EF0BB /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		2E2586E42BB5FA58006EF0BB /* WishListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		2E2586EA2BB5FA76006EF0BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E2586EB2BB5FA76006EF0BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E54F4A82BB5F734007B6D93 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0903FFD2C3C1BCA0077AEEE /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentDetails.storyboard; sourceTree = "<group>"; };
-		C0CF0EB82C3C1DB1003C6FBC /* Wishlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
-		C0D2FB432C3C1A81009BE8E9 /* Favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
+		C0CF0EB82C3C1DB1003C6FBC /* Reviews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reviews.storyboard; sourceTree = "<group>"; };
+		C0D2FB432C3C1A81009BE8E9 /* WishList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WishList.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 		1F024EE72C2B7DA20037D0D5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				2E2586CD2BB5F9A2006EF0BB /* FavoriteService.swift */,
+				2E2586CD2BB5F9A2006EF0BB /* WishListService.swift */,
 				1FF8CC6E2C1E4FA9009DC53D /* ContentService.swift */,
 			);
 			path = Services;
@@ -100,9 +100,9 @@
 			children = (
 				2E2586D52BB5F9DB006EF0BB /* LaunchScreen.storyboard */,
 				2E2586D42BB5F9DB006EF0BB /* Main.storyboard */,
-				C0CF0EB82C3C1DB1003C6FBC /* Wishlist.storyboard */,
+				C0CF0EB82C3C1DB1003C6FBC /* Reviews.storyboard */,
 				C0903FFD2C3C1BCA0077AEEE /* Home.storyboard */,
-				C0D2FB432C3C1A81009BE8E9 /* Favorite.storyboard */,
+				C0D2FB432C3C1A81009BE8E9 /* WishList.storyboard */,
 				C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */,
 				2E2586D62BB5F9DB006EF0BB /* ContentCollectionViewCell */,
 				2E2586D92BB5F9DB006EF0BB /* ContentTableViewCell */,
@@ -133,7 +133,7 @@
 			children = (
 				1FBA08AE2C2B59060001DD7F /* ContentListViewController.swift */,
 				2E2586E32BB5FA58006EF0BB /* ContentDetailViewController.swift */,
-				2E2586E42BB5FA58006EF0BB /* FavoritesViewController.swift */,
+				2E2586E42BB5FA58006EF0BB /* WishListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					2E54F4A72BB5F734007B6D93 = {
 						CreatedOnToolsVersion = 13.0;
@@ -235,10 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0903FFE2C3C1BCA0077AEEE /* Home.storyboard in Resources */,
-				C0CF0EB92C3C1DB1003C6FBC /* Wishlist.storyboard in Resources */,
+				C0CF0EB92C3C1DB1003C6FBC /* Reviews.storyboard in Resources */,
 				2E2586E02BB5F9DB006EF0BB /* ContentTableViewCell.xib in Resources */,
 				2E2586DD2BB5F9DB006EF0BB /* LaunchScreen.storyboard in Resources */,
-				C0D2FB442C3C1A81009BE8E9 /* Favorite.storyboard in Resources */,
+				C0D2FB442C3C1A81009BE8E9 /* WishList.storyboard in Resources */,
 				2E2586ED2BB5FA76006EF0BB /* Assets.xcassets in Resources */,
 				2E2586DC2BB5F9DB006EF0BB /* Main.storyboard in Resources */,
 				2E2586DF2BB5F9DB006EF0BB /* ContentCollectionViewCell.xib in Resources */,
@@ -263,8 +263,8 @@
 				2E2586E12BB5F9DB006EF0BB /* ContentTableViewCell.swift in Sources */,
 				2E2586E62BB5FA58006EF0BB /* ContentDetailViewController.swift in Sources */,
 				1FF8CC712C1E53CE009DC53D /* ContentSearchResponse.swift in Sources */,
-				2E2586E72BB5FA58006EF0BB /* FavoritesViewController.swift in Sources */,
-				2E2586D12BB5F9A2006EF0BB /* FavoriteService.swift in Sources */,
+				2E2586E72BB5FA58006EF0BB /* WishListViewController.swift in Sources */,
+				2E2586D12BB5F9A2006EF0BB /* WishListService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +308,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -369,6 +370,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
