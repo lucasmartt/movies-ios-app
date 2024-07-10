@@ -8,10 +8,10 @@
 import UIKit
 
 class ContentListViewController: UIViewController {
-    var viewTitle: String = "Home"
     var contentType: ContentType = .movie
     
     // Outlets
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var emptyStateView: UIView!
     @IBOutlet weak var emptyStateIcon: UIImageView!
@@ -40,7 +40,8 @@ class ContentListViewController: UIViewController {
     }
     
     private func setupViewController() {
-        self.title = viewTitle
+        self.title = "Home"
+        self.navigationItem.title = contentType == .movie ? "Movies" : "Series"
         setupSearchController()
         setupCollectionView()
     }
@@ -115,6 +116,13 @@ class ContentListViewController: UIViewController {
         contentDetailVC.contentId = content.id
         contentDetailVC.contentTitle = content.title
     }
+    
+    @IBAction func segmentedControlAction(_ sender: Any) {
+        contentType =  segmentedControl.selectedSegmentIndex == 0 ? .movie : .series
+        navigationItem.title = contentType == .movie ? "Movies" : "Series"
+        loadContent(withTitle: searchController.searchBar.text ?? "")
+    }
+    
 }
 
 // MARK: - UICollectionViewDataSource
