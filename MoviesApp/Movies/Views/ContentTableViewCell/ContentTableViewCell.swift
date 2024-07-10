@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ContentTableViewCellDelegate: AnyObject {
-    func didTapFavoriteButton(forContent content: Content)
+    func didTapWishButton(forContent content: Content)
 }
 
 class ContentTableViewCell: UITableViewCell {
@@ -47,8 +47,8 @@ class ContentTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func didTapFavoriteButton(_ sender: Any) {
+    @IBAction func didTapWishButton(_ sender: Any) {
         guard let content = content else { return }
-        delegate?.didTapFavoriteButton(forContent: content)
+        delegate?.didTapWishButton(forContent: content)
     }
 }
