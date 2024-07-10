@@ -1,20 +1,13 @@
-//
-//  FavoritesViewController.swift
-//  Movies
-//
-//  Created by Geovana Contine on 26/03/24.
-//
-
 import UIKit
 
-class FavoritesViewController: UIViewController {
+class WishListViewController: UIViewController {
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortButton: UIButton!
     
     // Services
-    var favoriteService = FavoriteService.shared
+    var wishListService = WishListService.shared
     
     // Search
     private let searchController = UISearchController()
@@ -27,14 +20,14 @@ class FavoritesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        content = favoriteService.listAll()
+        content = wishListService.listAll()
         tableView.reloadData()
     }
     
     private func setupViewController() {
         setupSearchController()
         setupTableView()
-        content = favoriteService.listAll()
+        content = wishListService.listAll()
     }
     
     private func setupSearchController() {
@@ -50,11 +43,11 @@ class FavoritesViewController: UIViewController {
     }
     
     @IBAction func toggleAscending(_ sender: Any) {
-        favoriteService.toggleAscending()
-        var buttonText = favoriteService.isAscending() ? "A-Z" : "Z-A"
+        wishListService.toggleAscending()
+        let buttonText = wishListService.isAscending() ? "A-Z" : "Z-A"
         sortButton.setTitle(buttonText, for: .normal)
-        favoriteService.sort()
-        content = favoriteService.listAll()
+        wishListService.sort()
+        content = wishListService.listAll()
         tableView.reloadData()
     }
     
@@ -62,7 +55,7 @@ class FavoritesViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension FavoritesViewController: UITableViewDataSource {
+extension WishListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         content.count
     }
@@ -82,22 +75,22 @@ extension FavoritesViewController: UITableViewDataSource {
 
 // MARK: - TitleTableViewCellDelegate
 
-extension FavoritesViewController: ContentTableViewCellDelegate {
-    func didTapFavoriteButton(forContent contentItem: Content) {
+extension WishListViewController: ContentTableViewCellDelegate {
+    func didTapWishButton(forContent contentItem: Content) {
         content.removeAll(where: { $0 == contentItem })
-        favoriteService.removeContent(withId: contentItem.id)
+        wishListService.removeContent(withId: contentItem.id)
         tableView.reloadData()
     }
 }
 
 // MARK: - UISearchResultsUpdating
 
-extension FavoritesViewController: UISearchResultsUpdating {
+extension WishListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text ?? ""
         
         if searchText.isEmpty {
-            content = favoriteService.listAll()
+            content = wishListService.listAll()
         } else {
             content = filteredTitles(byTitle: searchText)
         }
@@ -106,7 +99,7 @@ extension FavoritesViewController: UISearchResultsUpdating {
     }
     
     private func filteredTitles(byTitle contentTitle: String) -> [Content] {
-        favoriteService.listAll().filter({ content in
+        wishListService.listAll().filter({ content in
             content.title.contains(contentTitle)
         })
     }

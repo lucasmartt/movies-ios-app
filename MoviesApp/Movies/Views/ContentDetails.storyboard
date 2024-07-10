@@ -187,21 +187,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="oYV-2a-4si">
-                        <barButtonItem key="rightBarButtonItem" image="heart" catalog="system" style="done" id="dHU-nl-Max">
+                        <barButtonItem key="rightBarButtonItem" image="clock" catalog="system" style="done" id="dHU-nl-Max">
                             <connections>
-                                <action selector="didTapFavoriteButton:" destination="UIh-cA-vhG" id="lMa-g5-98Q"/>
+                                <action selector="didTapWishButton:" destination="UIh-cA-vhG" id="lMa-g5-98Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="contentCountryLabel" destination="QFe-BC-Xn8" id="J0k-iB-XgZ"/>
-                        <outlet property="contentFavoriteButton" destination="dHU-nl-Max" id="JQs-lg-uy2"/>
                         <outlet property="contentGenreLabel" destination="qQT-NO-eq3" id="3kv-FX-Xc9"/>
                         <outlet property="contentImageView" destination="SYs-Ud-Ilx" id="gDt-RR-p1A"/>
                         <outlet property="contentLanguageLabel" destination="aHZ-h7-93M" id="EBT-xK-bIK"/>
                         <outlet property="contentPlotLabel" destination="IfE-Ex-kFZ" id="8vi-VI-Ezt"/>
                         <outlet property="contentReleasedLabel" destination="G0X-Un-AyN" id="B0d-LR-cNi"/>
                         <outlet property="contentTitleLabel" destination="pkV-Qv-qZN" id="Eun-j3-Zxf"/>
+                        <outlet property="contentWishButton" destination="dHU-nl-Max" id="JQs-lg-uy2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-cn-ATk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -210,7 +210,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="clock" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

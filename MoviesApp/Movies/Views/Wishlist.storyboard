@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vNZ-Qd-SNZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N6R-g6-DeO">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,45 +9,78 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--Wish List-->
+        <scene sceneID="QY9-eZ-JOY">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="RNb-7m-sec"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="140" y="723"/>
-        </scene>
-        <!--Wishlist-->
-        <scene sceneID="di6-4Z-dt0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vNZ-Qd-SNZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wishlist" image="star" catalog="system" id="zTd-Um-6S3"/>
-                    <toolbarItems/>
+                <navigationController id="N6R-g6-DeO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Wish List" image="clock" catalog="system" selectedImage="clock.fill" id="W50-ab-Nt4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VqO-kY-SQ1">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tsg-9O-DAC">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="uNP-3q-Z79"/>
+                        <segue destination="jPU-a1-2B6" kind="relationship" relationship="rootViewController" id="cAy-au-Jpi"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m1W-cK-ZcV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPa-Ma-85J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.69465648854961" y="4.9295774647887329"/>
+            <point key="canvasLocation" x="830" y="756"/>
+        </scene>
+        <!--Wish List-->
+        <scene sceneID="RKz-zV-qe0">
+            <objects>
+                <viewController id="jPU-a1-2B6" customClass="WishListViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R7s-Um-sSd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ASP-ur-fhb">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dJm-d4-j2v">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <items>
+                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Z9p-Fl-dKF"/>
+                                        <barButtonItem style="plain" id="xSQ-jv-1Ov">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zc0-PE-gnq">
+                                                <rect key="frame" x="294" y="4.6666666666666679" width="83" height="34.666666666666657"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="A-Z"/>
+                                                <connections>
+                                                    <action selector="toggleAscending:" destination="jPU-a1-2B6" eventType="touchUpInside" id="ruP-sc-e4W"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </items>
+                                </toolbar>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bN8-gA-PgJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ASP-ur-fhb" firstAttribute="leading" secondItem="bN8-gA-PgJ" secondAttribute="leading" id="01q-1i-zi2"/>
+                            <constraint firstItem="ASP-ur-fhb" firstAttribute="top" secondItem="bN8-gA-PgJ" secondAttribute="top" id="RgV-jc-pPf"/>
+                            <constraint firstItem="bN8-gA-PgJ" firstAttribute="trailing" secondItem="ASP-ur-fhb" secondAttribute="trailing" id="XLk-kV-J02"/>
+                            <constraint firstItem="bN8-gA-PgJ" firstAttribute="bottom" secondItem="ASP-ur-fhb" secondAttribute="bottom" id="eIe-Ls-R2W"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Wish List" id="NEw-m8-57U"/>
+                    <connections>
+                        <outlet property="sortButton" destination="zc0-PE-gnq" id="fIM-9I-bMK"/>
+                        <outlet property="tableView" destination="ASP-ur-fhb" id="LWW-vL-kSg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a8x-0I-c6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829.7709923664122" y="1483.8028169014085"/>
         </scene>
     </scenes>
     <resources>
-        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="clock" catalog="system" width="128" height="123"/>
+        <image name="clock.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

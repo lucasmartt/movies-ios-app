@@ -10,7 +10,7 @@ import UIKit
 class ContentDetailViewController: UIViewController {
     
     // Outlets
-    @IBOutlet weak var contentFavoriteButton: UIBarButtonItem!
+    @IBOutlet weak var contentWishButton: UIBarButtonItem!
     @IBOutlet weak var contentTitleLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var contentGenreLabel: UILabel!
@@ -21,7 +21,7 @@ class ContentDetailViewController: UIViewController {
     
     // Services
     var contentService = ContentService()
-    var favoriteService = FavoriteService.shared
+    var wishListService = WishListService.shared
     
     // Data
     var contentId: String?
@@ -60,16 +60,16 @@ class ContentDetailViewController: UIViewController {
         contentLanguageLabel.text = content?.language
         contentReleasedLabel.text = content?.released
         contentPlotLabel.text = content?.plot
-        updateFavoriteButton()
+        updateWishButton()
     }
     
-    private func updateFavoriteButton() {
+    private func updateWishButton() {
         guard let content = content else { return }
         
-        let isFavorite = favoriteService.isFavorite(contentId: content.id)
-        self.content?.isFavorite = isFavorite
-        let favoriteIcon = isFavorite ? "heart.fill" : "heart"
-        contentFavoriteButton.image = .init(systemName: favoriteIcon)
+        let isWished = wishListService.isWished(contentId: content.id)
+        self.content?.isWished = isWished
+        let wishIcon = isWished ? "clock.fill" : "clock"
+        contentWishButton.image = .init(systemName: wishIcon)
     }
     
     private func updateContentImage(withImageData imageData: Data?) {
@@ -81,17 +81,15 @@ class ContentDetailViewController: UIViewController {
         }
     }
     
-    @IBAction func didTapFavoriteButton(_ sender: Any) {
+    @IBAction func didTapWishButton(_ sender: Any) {
         guard let content = content else { return }
         
-        if content.isFavorite {
-            // Remove movie from favorite list
-            favoriteService.removeContent(withId: content.id)
+        if content.isWished {
+            wishListService.removeContent(withId: content.id)
         } else {
-            // Add movie to favorite list
-            favoriteService.addContent(content)
+            wishListService.addContent(content)
         }
         
-        updateFavoriteButton()
+        updateWishButton()
     }
 }
