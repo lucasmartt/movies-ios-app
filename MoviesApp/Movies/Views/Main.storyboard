@@ -37,20 +37,20 @@
             </objects>
             <point key="canvasLocation" x="-110" y="428"/>
         </scene>
-        <!--Favorite-->
+        <!--WishList-->
         <scene sceneID="np4-Xe-2rI">
             <objects>
-                <viewControllerPlaceholder storyboardName="Favorite" id="pOP-PM-JeR" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="WishList" id="pOP-PM-JeR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="O4g-2Q-5yg"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJZ-RD-oEl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="179" y="428"/>
         </scene>
-        <!--Wishlist-->
+        <!--Reviews-->
         <scene sceneID="pwr-CD-fNh">
             <objects>
-                <viewControllerPlaceholder storyboardName="Wishlist" id="jbv-tv-mJ4" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Reviews" id="jbv-tv-mJ4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="17J-5H-f1B"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ez-Ce-w9t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
