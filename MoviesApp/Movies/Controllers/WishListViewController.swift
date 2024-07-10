@@ -44,7 +44,7 @@ class WishListViewController: UIViewController {
     
     @IBAction func toggleAscending(_ sender: Any) {
         wishListService.toggleAscending()
-        var buttonText = wishListService.isAscending() ? "A-Z" : "Z-A"
+        let buttonText = wishListService.isAscending() ? "A-Z" : "Z-A"
         sortButton.setTitle(buttonText, for: .normal)
         wishListService.sort()
         content = wishListService.listAll()
