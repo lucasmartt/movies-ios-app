@@ -19,6 +19,7 @@ struct Content: Codable, Equatable {
     let seasons: String?
     
     var isWished: Bool = false
+    var contentType: ContentType?
     
     enum CodingKeys: String, CodingKey {
         case id = "imdbID"

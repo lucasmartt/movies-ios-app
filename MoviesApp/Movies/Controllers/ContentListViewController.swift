@@ -115,6 +115,7 @@ class ContentListViewController: UIViewController {
         
         contentDetailVC.contentId = content.id
         contentDetailVC.contentTitle = content.title
+        contentDetailVC.contentType = contentType
     }
     
     @IBAction func segmentedControlAction(_ sender: Any) {

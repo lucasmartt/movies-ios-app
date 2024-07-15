@@ -26,6 +26,7 @@ class ContentDetailViewController: UIViewController {
     // Data
     var contentId: String?
     var contentTitle: String?
+    var contentType: ContentType?
     private var content: Content?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +83,8 @@ class ContentDetailViewController: UIViewController {
     }
     
     @IBAction func didTapWishButton(_ sender: Any) {
-        guard let content = content else { return }
+        guard var content = content else { return }
+        content.contentType = contentType
         
         if content.isWished {
             wishListService.removeContent(withId: content.id)
