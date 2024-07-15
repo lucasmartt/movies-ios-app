@@ -18,6 +18,7 @@ struct Content: Codable, Equatable {
     let poster: String?
     let seasons: String?
     
+    var rate: RateOptions = .unset
     var isWished: Bool = false
     var contentType: ContentType?
     
