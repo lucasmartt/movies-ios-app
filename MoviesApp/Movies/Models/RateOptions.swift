@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum RateOptions: String {
+    case good = "🥰"
+    case average = "🙂"
+    case bad = "🤮"
+    case unset = ""
+}
