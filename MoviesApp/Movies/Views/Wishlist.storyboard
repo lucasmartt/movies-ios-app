@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N6R-g6-DeO">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N6R-g6-DeO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,11 +15,11 @@
                     <tabBarItem key="tabBarItem" title="Wish List" image="clock" catalog="system" selectedImage="clock.fill" id="W50-ab-Nt4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tsg-9O-DAC">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="jPU-a1-2B6" kind="relationship" relationship="rootViewController" id="cAy-au-Jpi"/>
+                        <segue destination="GnH-dN-AcG" kind="relationship" relationship="rootViewController" id="agZ-gh-2mH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPa-Ma-85J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -28,59 +27,74 @@
             <point key="canvasLocation" x="830" y="756"/>
         </scene>
         <!--Wish List-->
-        <scene sceneID="RKz-zV-qe0">
+        <scene sceneID="HpH-ee-b0e">
             <objects>
-                <viewController id="jPU-a1-2B6" customClass="WishListViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="R7s-Um-sSd">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <viewController id="GnH-dN-AcG" customClass="WishListViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QZH-kT-Jc4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ASP-ur-fhb">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jeq-Uc-2ke">
+                                <rect key="frame" x="0.0" y="119" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dJm-d4-j2v">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pfj-9z-f9F">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <items>
-                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Z9p-Fl-dKF"/>
-                                        <barButtonItem style="plain" id="xSQ-jv-1Ov">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zc0-PE-gnq">
-                                                <rect key="frame" x="294" y="4.6666666666666679" width="83" height="34.666666666666657"/>
+                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Sed-s8-YOz"/>
+                                        <barButtonItem style="plain" id="inr-4s-5zh">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="TTo-gE-RBa">
+                                                <rect key="frame" x="311" y="4.5" width="83" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="A-Z"/>
                                                 <connections>
-                                                    <action selector="toggleAscending:" destination="jPU-a1-2B6" eventType="touchUpInside" id="ruP-sc-e4W"/>
+                                                    <action selector="toggleAscending:" destination="GnH-dN-AcG" eventType="touchUpInside" id="Ma2-XX-kWr"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
                                     </items>
                                 </toolbar>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oPy-nH-SvX">
+                                <rect key="frame" x="10" y="88" width="394" height="32"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Movies"/>
+                                    <segment title="Series"/>
+                                </segments>
+                                <connections>
+                                    <action selector="filterTapped:" destination="GnH-dN-AcG" eventType="valueChanged" id="GKN-Dq-8ye"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="bN8-gA-PgJ"/>
+                        <viewLayoutGuide key="safeArea" id="Nz1-NR-ytA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ASP-ur-fhb" firstAttribute="leading" secondItem="bN8-gA-PgJ" secondAttribute="leading" id="01q-1i-zi2"/>
-                            <constraint firstItem="ASP-ur-fhb" firstAttribute="top" secondItem="bN8-gA-PgJ" secondAttribute="top" id="RgV-jc-pPf"/>
-                            <constraint firstItem="bN8-gA-PgJ" firstAttribute="trailing" secondItem="ASP-ur-fhb" secondAttribute="trailing" id="XLk-kV-J02"/>
-                            <constraint firstItem="bN8-gA-PgJ" firstAttribute="bottom" secondItem="ASP-ur-fhb" secondAttribute="bottom" id="eIe-Ls-R2W"/>
+                            <constraint firstItem="Jeq-Uc-2ke" firstAttribute="leading" secondItem="Nz1-NR-ytA" secondAttribute="leading" id="6hS-Ec-PhP"/>
+                            <constraint firstItem="Nz1-NR-ytA" firstAttribute="trailing" secondItem="Jeq-Uc-2ke" secondAttribute="trailing" id="MGg-7H-XVG"/>
+                            <constraint firstItem="Nz1-NR-ytA" firstAttribute="trailing" secondItem="oPy-nH-SvX" secondAttribute="trailing" constant="10" id="R3P-Jb-6Jx"/>
+                            <constraint firstItem="Nz1-NR-ytA" firstAttribute="bottom" secondItem="Jeq-Uc-2ke" secondAttribute="bottom" id="SE6-Oq-Xe9"/>
+                            <constraint firstItem="oPy-nH-SvX" firstAttribute="leading" secondItem="Nz1-NR-ytA" secondAttribute="leading" constant="10" id="mia-yo-5MY"/>
+                            <constraint firstItem="Jeq-Uc-2ke" firstAttribute="top" secondItem="oPy-nH-SvX" secondAttribute="bottom" id="r0E-PP-RG4"/>
+                            <constraint firstItem="oPy-nH-SvX" firstAttribute="top" secondItem="Nz1-NR-ytA" secondAttribute="top" id="ssn-c1-HJs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Wish List" id="NEw-m8-57U"/>
+                    <navigationItem key="navigationItem" title="Wish List" id="dBU-eh-caa"/>
                     <connections>
-                        <outlet property="sortButton" destination="zc0-PE-gnq" id="fIM-9I-bMK"/>
-                        <outlet property="tableView" destination="ASP-ur-fhb" id="LWW-vL-kSg"/>
+                        <outlet property="segmentedControl" destination="oPy-nH-SvX" id="r3m-1S-eN1"/>
+                        <outlet property="sortButton" destination="TTo-gE-RBa" id="mNP-E8-9xe"/>
+                        <outlet property="tableView" destination="Jeq-Uc-2ke" id="oKZ-Bd-6BG"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a8x-0I-c6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xb8-Ms-Xsb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829.7709923664122" y="1483.8028169014085"/>
+            <point key="canvasLocation" x="828.98550724637687" y="1483.2589285714284"/>
         </scene>
     </scenes>
     <resources>
-        <image name="clock" catalog="system" width="128" height="123"/>
-        <image name="clock.fill" catalog="system" width="128" height="123"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="clock.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
