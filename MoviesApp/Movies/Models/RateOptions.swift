@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum RateOptions: String {
+enum RateOptions: String, CaseIterable {
+    case unset = ""
     case good = "🥰"
     case average = "🙂"
     case bad = "🤮"
-    case unset = ""
 }

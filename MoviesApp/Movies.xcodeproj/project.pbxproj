@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F05ACFD2C449AF600E07B7E /* RateOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05ACFC2C449AF600E07B7E /* RateOptions.swift */; };
+		1F05ACFF2C44A5A400E07B7E /* RateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05ACFE2C44A5A400E07B7E /* RateService.swift */; };
+		1F05AD002C44B6B400E07B7E /* ContentDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */; };
 		1F8AD5472BEC3FC80012D740 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AD5462BEC3FC80012D740 /* ContentType.swift */; };
 		1FBA08AF2C2B59060001DD7F /* ContentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA08AE2C2B59060001DD7F /* ContentListViewController.swift */; };
 		1FF8CC6F2C1E4FA9009DC53D /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8CC6E2C1E4FA9009DC53D /* ContentService.swift */; };
@@ -26,13 +28,13 @@
 		2E2586E72BB5FA58006EF0BB /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586E42BB5FA58006EF0BB /* WishListViewController.swift */; };
 		2E2586ED2BB5FA76006EF0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2586EB2BB5FA76006EF0BB /* Assets.xcassets */; };
 		C0903FFE2C3C1BCA0077AEEE /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0903FFD2C3C1BCA0077AEEE /* Home.storyboard */; };
-		C091EFFA2C3C1E790041F6BE /* ContentDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */; };
 		C0CF0EB92C3C1DB1003C6FBC /* Reviews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CF0EB82C3C1DB1003C6FBC /* Reviews.storyboard */; };
 		C0D2FB442C3C1A81009BE8E9 /* WishList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D2FB432C3C1A81009BE8E9 /* WishList.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F05ACFC2C449AF600E07B7E /* RateOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateOptions.swift; sourceTree = "<group>"; };
+		1F05ACFE2C44A5A400E07B7E /* RateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateService.swift; sourceTree = "<group>"; };
 		1F8AD5462BEC3FC80012D740 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		1FBA08AE2C2B59060001DD7F /* ContentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListViewController.swift; sourceTree = "<group>"; };
 		1FF8CC6E2C1E4FA9009DC53D /* ContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentService.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				2E2586CD2BB5F9A2006EF0BB /* WishListService.swift */,
 				1FF8CC6E2C1E4FA9009DC53D /* ContentService.swift */,
+				1F05ACFE2C44A5A400E07B7E /* RateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -245,7 +248,7 @@
 				2E2586ED2BB5FA76006EF0BB /* Assets.xcassets in Resources */,
 				2E2586DC2BB5F9DB006EF0BB /* Main.storyboard in Resources */,
 				2E2586DF2BB5F9DB006EF0BB /* ContentCollectionViewCell.xib in Resources */,
-				C091EFFA2C3C1E790041F6BE /* ContentDetails.storyboard in Resources */,
+				1F05AD002C44B6B400E07B7E /* ContentDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8AD5472BEC3FC80012D740 /* ContentType.swift in Sources */,
+				1F05ACFF2C44A5A400E07B7E /* RateService.swift in Sources */,
 				1FBA08AF2C2B59060001DD7F /* ContentListViewController.swift in Sources */,
 				1FF8CC6F2C1E4FA9009DC53D /* ContentService.swift in Sources */,
 				2E2586C82BB5F984006EF0BB /* AppDelegate.swift in Sources */,

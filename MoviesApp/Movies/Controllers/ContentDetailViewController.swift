@@ -19,9 +19,12 @@ class ContentDetailViewController: UIViewController {
     @IBOutlet weak var contentLanguageLabel: UILabel!
     @IBOutlet weak var contentPlotLabel: UILabel!
     
+    @IBOutlet weak var contentRatingsSegCtrl: UISegmentedControl!
+    
     // Services
     var contentService = ContentService()
     var wishListService = WishListService.shared
+    var rateService = RateService.shared
     
     // Data
     var contentId: String?
@@ -32,6 +35,7 @@ class ContentDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         contentTitleLabel.text = contentTitle
         loadTitleData()
+        addRateOptions()
     }
     
     private func loadTitleData() {
@@ -79,6 +83,21 @@ class ContentDetailViewController: UIViewController {
             let contentImage = UIImage(data: imageData)
             self.contentImageView.image = contentImage
         }
+    }
+    
+    private func addRateOptions() {
+        contentRatingsSegCtrl.removeAllSegments()
+        for (index, option) in RateOptions.allCases.enumerated() {
+            contentRatingsSegCtrl.insertSegment(withTitle: option.rawValue, at: index, animated: false)
+        }
+    }
+    
+    
+    @IBAction func ratingValueChanged(_ sender: Any) {
+        guard let content = content else { return }
+        self.content?.rate = RateOptions.allCases[contentRatingsSegCtrl.selectedSegmentIndex]
+        rateService.addContent(content)
+        //print(self.content ?? "")
     }
     
     @IBAction func didTapWishButton(_ sender: Any) {
