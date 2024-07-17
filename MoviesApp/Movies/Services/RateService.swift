@@ -10,7 +10,7 @@ import Foundation
 class RateService {
     static let shared = RateService()
     private init() {
-        ratedContent = getRatedContent()
+        ratedContent = getPersistedRatings()
         sort()
     }
     
@@ -29,6 +29,9 @@ class RateService {
     
     private func persistRatings() {
         do {
+            for c in ratedContent {
+                print(c.title, c.rate)
+            }
             let data = try encoder.encode(ratedContent)
             UserDefaults.standard.set(data, forKey: ratedContentKey)
         } catch {
@@ -36,7 +39,7 @@ class RateService {
         }
     }
     
-    private func getRatedContent() -> [Content] {
+    private func getPersistedRatings() -> [Content] {
         guard let data = UserDefaults.standard.data(forKey: ratedContentKey) else { return [] }
         do {
             return try decoder.decode([Content].self, from: data)
@@ -56,9 +59,28 @@ class RateService {
     }
     
     func isAscending() -> Bool { ascending }
-    
+            
     func toggleAscending() { ascending = !ascending }
+    
+    private func getContentIndex(forId id: String) -> Int? {
+        return ratedContent.firstIndex(where: { $0.id == id })
+    }
+    
+    func getRate(withId id: String) -> RateOptions {
+        if let index = getContentIndex(forId: id) {
+            return ratedContent[index].rate
+        }
+        return .unset
+    }
         
+    func updateRate(forId id: String, newRate: RateOptions) {
+        if let index = getContentIndex(forId: id) {
+            ratedContent[index].rate = newRate
+            sort()
+            persistRatings()
+        }
+    }
+    
     func addContent(_ content: Content) {
         ratedContent.append(content)
         sort()

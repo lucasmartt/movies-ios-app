@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ContentType: String {
+enum ContentType: String, Codable {
     case movie = "movie"
     case series = "series"
     case episode = "episode"

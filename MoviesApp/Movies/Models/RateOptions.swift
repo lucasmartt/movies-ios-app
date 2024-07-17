@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum RateOptions: String, CaseIterable {
-    case unset = ""
+enum RateOptions: String, Codable, CaseIterable {
+    case unset = "X"
     case good = "🥰"
     case average = "🙂"
     case bad = "🤮"

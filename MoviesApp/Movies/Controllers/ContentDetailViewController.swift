@@ -36,7 +36,6 @@ class ContentDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         contentTitleLabel.text = contentTitle
         loadTitleData()
-        addRateOptions()
     }
     
     private func loadTitleData() {
@@ -54,6 +53,7 @@ class ContentDetailViewController: UIViewController {
             }
             
             DispatchQueue.main.async {
+                self.addRateOptions()
                 self.updateViewData()
             }
         }
@@ -87,17 +87,32 @@ class ContentDetailViewController: UIViewController {
     }
     
     private func addRateOptions() {
+        guard let content = content else { return }
+        let rate = rateService.getRate(withId: content.id)
         contentRatingsSegCtrl.removeAllSegments()
         for (index, option) in RateOptions.allCases.enumerated() {
             contentRatingsSegCtrl.insertSegment(withTitle: option.rawValue, at: index, animated: false)
+            if option == rate {
+                contentRatingsSegCtrl.selectedSegmentIndex = index
+            }
         }
     }
     
-    
     @IBAction func ratingValueChanged(_ sender: Any) {
         guard let content = content else { return }
-        self.content?.rate = RateOptions.allCases[contentRatingsSegCtrl.selectedSegmentIndex]
-        rateService.addContent(content)
+
+        let newRate = RateOptions.allCases[contentRatingsSegCtrl.selectedSegmentIndex]
+
+        if newRate == .unset {
+            if rateService.isRated(contentId: content.id) {
+                rateService.removeContent(withId: content.id)
+            }
+        } else {
+            if !rateService.isRated(contentId: content.id) {
+                rateService.addContent(content)
+            }
+            rateService.updateRate(forId: content.id, newRate: newRate)
+        }
         //print(self.content ?? "")
     }
     
