@@ -27,6 +27,7 @@
 		2E2586E62BB5FA58006EF0BB /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586E32BB5FA58006EF0BB /* ContentDetailViewController.swift */; };
 		2E2586E72BB5FA58006EF0BB /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586E42BB5FA58006EF0BB /* WishListViewController.swift */; };
 		2E2586ED2BB5FA76006EF0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2586EB2BB5FA76006EF0BB /* Assets.xcassets */; };
+		30B4738C2C456DEF008F2637 /* ReviewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B4738B2C456DEF008F2637 /* ReviewsListViewController.swift */; };
 		C0903FFE2C3C1BCA0077AEEE /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0903FFD2C3C1BCA0077AEEE /* Home.storyboard */; };
 		C0CF0EB92C3C1DB1003C6FBC /* Reviews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CF0EB82C3C1DB1003C6FBC /* Reviews.storyboard */; };
 		C0D2FB442C3C1A81009BE8E9 /* WishList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D2FB432C3C1A81009BE8E9 /* WishList.storyboard */; };
@@ -54,6 +55,7 @@
 		2E2586EA2BB5FA76006EF0BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E2586EB2BB5FA76006EF0BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E54F4A82BB5F734007B6D93 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B4738B2C456DEF008F2637 /* ReviewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListViewController.swift; sourceTree = "<group>"; };
 		C0903FFD2C3C1BCA0077AEEE /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentDetails.storyboard; sourceTree = "<group>"; };
 		C0CF0EB82C3C1DB1003C6FBC /* Reviews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reviews.storyboard; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				1FBA08AE2C2B59060001DD7F /* ContentListViewController.swift */,
 				2E2586E32BB5FA58006EF0BB /* ContentDetailViewController.swift */,
 				2E2586E42BB5FA58006EF0BB /* WishListViewController.swift */,
+				30B4738B2C456DEF008F2637 /* ReviewsListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				1F8AD5472BEC3FC80012D740 /* ContentType.swift in Sources */,
 				1F05ACFF2C44A5A400E07B7E /* RateService.swift in Sources */,
 				1FBA08AF2C2B59060001DD7F /* ContentListViewController.swift in Sources */,
+				30B4738C2C456DEF008F2637 /* ReviewsListViewController.swift in Sources */,
 				1FF8CC6F2C1E4FA9009DC53D /* ContentService.swift in Sources */,
 				2E2586C82BB5F984006EF0BB /* AppDelegate.swift in Sources */,
 				2E2586D02BB5F9A2006EF0BB /* Content.swift in Sources */,
