@@ -5,14 +5,16 @@ class WishListViewController: UIViewController {
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortButton: UIButton!
-    
+
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     // Services
     var wishListService = WishListService.shared
     
     // Search
     private let searchController = UISearchController()
     private var content: [Content] = []
-
+    private var contentType: ContentType? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
@@ -20,14 +22,14 @@ class WishListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        content = wishListService.listAll()
+        content = wishListService.listAll(of: contentType)
         tableView.reloadData()
     }
     
     private func setupViewController() {
         setupSearchController()
         setupTableView()
-        content = wishListService.listAll()
+        content = wishListService.listAll(of: contentType)
     }
     
     private func setupSearchController() {
@@ -47,7 +49,17 @@ class WishListViewController: UIViewController {
         let buttonText = wishListService.isAscending() ? "A-Z" : "Z-A"
         sortButton.setTitle(buttonText, for: .normal)
         wishListService.sort()
-        content = wishListService.listAll()
+        content = wishListService.listAll(of: contentType)
+        tableView.reloadData()
+    }
+    
+    @IBAction func filterTapped(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 1: contentType = .movie
+        case 2: contentType = .series
+        default: contentType = nil
+        }
+        content = wishListService.listAll(of: contentType)
         tableView.reloadData()
     }
     
@@ -90,7 +102,7 @@ extension WishListViewController: UISearchResultsUpdating {
         let searchText = searchController.searchBar.text ?? ""
         
         if searchText.isEmpty {
-            content = wishListService.listAll()
+            content = wishListService.listAll(of: contentType)
         } else {
             content = filteredTitles(byTitle: searchText)
         }
@@ -99,7 +111,7 @@ extension WishListViewController: UISearchResultsUpdating {
     }
     
     private func filteredTitles(byTitle contentTitle: String) -> [Content] {
-        wishListService.listAll().filter({ content in
+        wishListService.listAll(of: contentType).filter({ content in
             content.title.contains(contentTitle)
         })
     }

@@ -14,7 +14,12 @@ class WishListService {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
-    func listAll() -> [Content] { wishedContent }
+    func listAll(of contentType: ContentType?) -> [Content] {
+        if let contentType = contentType {
+            return wishedContent.filter({$0.contentType == contentType})
+        }
+        return wishedContent
+    }
     
     func isWished(contentId: String) -> Bool {
         wishedContent.contains { $0.id == contentId }
