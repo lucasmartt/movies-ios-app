@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="jPU-a1-2B6" kind="relationship" relationship="rootViewController" id="cAy-au-Jpi"/>
+                        <segue destination="GnH-dN-AcG" kind="relationship" relationship="rootViewController" id="agZ-gh-2mH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPa-Ma-85J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -27,54 +27,66 @@
             <point key="canvasLocation" x="830" y="756"/>
         </scene>
         <!--Wish List-->
-        <scene sceneID="RKz-zV-qe0">
+        <scene sceneID="HpH-ee-b0e">
             <objects>
-                <viewController id="jPU-a1-2B6" customClass="WishListViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="R7s-Um-sSd">
+                <viewController id="GnH-dN-AcG" customClass="WishListViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QZH-kT-Jc4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ASP-ur-fhb">
-                                <rect key="frame" x="0.0" y="248" width="414" height="565"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jeq-Uc-2ke">
+                                <rect key="frame" x="0.0" y="119" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pfj-9z-f9F">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <items>
+                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Sed-s8-YOz"/>
+                                        <barButtonItem style="plain" id="inr-4s-5zh">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="TTo-gE-RBa">
+                                                <rect key="frame" x="286" y="4.5" width="108" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Ordenação"/>
+                                            </button>
+                                        </barButtonItem>
+                                    </items>
+                                </toolbar>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oPy-nH-SvX">
+                                <rect key="frame" x="10" y="88" width="394" height="32"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Movies"/>
+                                    <segment title="Series"/>
+                                </segments>
+                                <connections>
+                                    <action selector="filterTapped:" destination="GnH-dN-AcG" eventType="valueChanged" id="GKN-Dq-8ye"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="bN8-gA-PgJ"/>
+                        <viewLayoutGuide key="safeArea" id="Nz1-NR-ytA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ASP-ur-fhb" firstAttribute="leading" secondItem="bN8-gA-PgJ" secondAttribute="leading" id="01q-1i-zi2"/>
-                            <constraint firstItem="ASP-ur-fhb" firstAttribute="top" secondItem="bN8-gA-PgJ" secondAttribute="top" id="24x-B8-JOf"/>
-                            <constraint firstItem="bN8-gA-PgJ" firstAttribute="trailing" secondItem="ASP-ur-fhb" secondAttribute="trailing" id="XLk-kV-J02"/>
-                            <constraint firstItem="bN8-gA-PgJ" firstAttribute="bottom" secondItem="ASP-ur-fhb" secondAttribute="bottom" id="eIe-Ls-R2W"/>
+                            <constraint firstItem="Jeq-Uc-2ke" firstAttribute="leading" secondItem="Nz1-NR-ytA" secondAttribute="leading" id="6hS-Ec-PhP"/>
+                            <constraint firstItem="Nz1-NR-ytA" firstAttribute="trailing" secondItem="Jeq-Uc-2ke" secondAttribute="trailing" id="MGg-7H-XVG"/>
+                            <constraint firstItem="Nz1-NR-ytA" firstAttribute="trailing" secondItem="oPy-nH-SvX" secondAttribute="trailing" constant="10" id="R3P-Jb-6Jx"/>
+                            <constraint firstItem="Nz1-NR-ytA" firstAttribute="bottom" secondItem="Jeq-Uc-2ke" secondAttribute="bottom" id="SE6-Oq-Xe9"/>
+                            <constraint firstItem="oPy-nH-SvX" firstAttribute="leading" secondItem="Nz1-NR-ytA" secondAttribute="leading" constant="10" id="mia-yo-5MY"/>
+                            <constraint firstItem="Jeq-Uc-2ke" firstAttribute="top" secondItem="oPy-nH-SvX" secondAttribute="bottom" id="r0E-PP-RG4"/>
+                            <constraint firstItem="oPy-nH-SvX" firstAttribute="top" secondItem="Nz1-NR-ytA" secondAttribute="top" id="ssn-c1-HJs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Wish List" id="NEw-m8-57U">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="mhu-6f-fmn">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" id="BvD-89-ycf">
-                                <rect key="frame" x="302" y="7" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Wish List" id="dBU-eh-caa"/>
                     <connections>
-                        <outlet property="sortButton" destination="BvD-89-ycf" id="RFl-GH-nST"/>
-                        <outlet property="tableView" destination="ASP-ur-fhb" id="LWW-vL-kSg"/>
-                        <segue destination="7E7-gS-oSp" kind="show" identifier="showContentDetailVC" id="71R-us-Pgt"/>
+                        <outlet property="segmentedControl" destination="oPy-nH-SvX" id="r3m-1S-eN1"/>
+                        <outlet property="sortButton" destination="TTo-gE-RBa" id="j0w-V8-05C"/>
+                        <outlet property="tableView" destination="Jeq-Uc-2ke" id="oKZ-Bd-6BG"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a8x-0I-c6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xb8-Ms-Xsb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828.98550724637687" y="1501.3392857142856"/>
-        </scene>
-        <!--ContentDetails-->
-        <scene sceneID="keZ-o3-Xsz">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ContentDetails" id="7E7-gS-oSp" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="W00-GZ-ZTT"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6gl-Te-77a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="830" y="1888"/>
+            <point key="canvasLocation" x="828.98550724637687" y="1483.2589285714284"/>
         </scene>
     </scenes>
     <resources>

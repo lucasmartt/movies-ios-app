@@ -35,7 +35,8 @@ struct Content: Codable, Equatable {
     
     var wishedDate: Date?
     var isWished: Bool = false
-    
+    var contentType: ContentType?
+
     enum CodingKeys: String, CodingKey {
         case id = "imdbID"
         case title = "Title"
