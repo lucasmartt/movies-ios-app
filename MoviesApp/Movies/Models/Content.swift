@@ -22,6 +22,7 @@ struct Content: Codable, Equatable {
     var isWished: Bool = false
     var contentType: ContentType?
     
+
     enum CodingKeys: String, CodingKey {
         case id = "imdbID"
         case title = "Title"
