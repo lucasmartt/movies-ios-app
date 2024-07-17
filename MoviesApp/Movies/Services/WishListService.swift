@@ -4,7 +4,6 @@ class WishListService {
     static let shared = WishListService()
     private init() {
         wishedContent = getWishedContent()
-        sort()
     }
     
     private var wishedContent: [Content] = []
@@ -39,28 +38,17 @@ class WishListService {
         }
     }
     
-    func sort() {
-        switch sortBy {
-        case "title": ascending
-            ? wishedContent.sort { $0.title < $1.title }
-            : wishedContent.sort { $0.title > $1.title }
-        default: print("Unsupported key for sorting")
-        }
-    }
-    
     func isAscending() -> Bool { ascending }
     
     func toggleAscending() { ascending = !ascending }
         
     func addContent(_ content: Content) {
         wishedContent.append(content)
-        sort()
         persistWishList()
     }
         
     func removeContent(withId contentId: String) {
         wishedContent.removeAll { $0.id == contentId }
-        sort()
         persistWishList()
     }
 }

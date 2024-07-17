@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N6R-g6-DeO">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N6R-g6-DeO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +15,7 @@
                     <tabBarItem key="tabBarItem" title="Wish List" image="clock" catalog="system" selectedImage="clock.fill" id="W50-ab-Nt4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tsg-9O-DAC">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -32,51 +31,40 @@
             <objects>
                 <viewController id="jPU-a1-2B6" customClass="WishListViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R7s-Um-sSd">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ASP-ur-fhb">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ASP-ur-fhb">
+                                <rect key="frame" x="0.0" y="248" width="414" height="565"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dJm-d4-j2v">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <items>
-                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Z9p-Fl-dKF"/>
-                                        <barButtonItem style="plain" id="xSQ-jv-1Ov">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zc0-PE-gnq">
-                                                <rect key="frame" x="294" y="4.6666666666666679" width="83" height="34.666666666666657"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="A-Z"/>
-                                                <connections>
-                                                    <action selector="toggleAscending:" destination="jPU-a1-2B6" eventType="touchUpInside" id="ruP-sc-e4W"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </items>
-                                </toolbar>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bN8-gA-PgJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ASP-ur-fhb" firstAttribute="leading" secondItem="bN8-gA-PgJ" secondAttribute="leading" id="01q-1i-zi2"/>
-                            <constraint firstItem="ASP-ur-fhb" firstAttribute="top" secondItem="bN8-gA-PgJ" secondAttribute="top" id="RgV-jc-pPf"/>
+                            <constraint firstItem="ASP-ur-fhb" firstAttribute="top" secondItem="bN8-gA-PgJ" secondAttribute="top" id="24x-B8-JOf"/>
                             <constraint firstItem="bN8-gA-PgJ" firstAttribute="trailing" secondItem="ASP-ur-fhb" secondAttribute="trailing" id="XLk-kV-J02"/>
                             <constraint firstItem="bN8-gA-PgJ" firstAttribute="bottom" secondItem="ASP-ur-fhb" secondAttribute="bottom" id="eIe-Ls-R2W"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Wish List" id="NEw-m8-57U"/>
+                    <navigationItem key="navigationItem" title="Wish List" id="NEw-m8-57U">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="mhu-6f-fmn">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" id="BvD-89-ycf">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="sortButton" destination="zc0-PE-gnq" id="fIM-9I-bMK"/>
+                        <outlet property="sortButton" destination="BvD-89-ycf" id="RFl-GH-nST"/>
                         <outlet property="tableView" destination="ASP-ur-fhb" id="LWW-vL-kSg"/>
                         <segue destination="7E7-gS-oSp" kind="show" identifier="showContentDetailVC" id="71R-us-Pgt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8x-0I-c6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="1502"/>
+            <point key="canvasLocation" x="828.98550724637687" y="1501.3392857142856"/>
         </scene>
         <!--ContentDetails-->
         <scene sceneID="keZ-o3-Xsz">
@@ -90,8 +78,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clock" catalog="system" width="128" height="123"/>
-        <image name="clock.fill" catalog="system" width="128" height="123"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="clock.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

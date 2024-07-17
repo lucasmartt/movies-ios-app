@@ -1,11 +1,27 @@
 import UIKit
 
+enum SortOptions: String, CaseIterable {
+    case byInsertion = "Inserção"
+    case byTitle = "Título"
+    case byRelease = "Lançamento"
+    
+    func image() -> UIImage {
+        switch self {
+        case .byTitle:
+            return UIImage(systemName: "clock") ?? UIImage()
+        case .byRelease:
+            return UIImage(systemName: "clock") ?? UIImage()
+        case .byInsertion:
+            return UIImage(systemName: "clock") ?? UIImage()
+        }
+    }
+}
+
 class WishListViewController: UIViewController {
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortButton: UIButton!
-    
     // Services
     var wishListService = WishListService.shared
     
@@ -13,22 +29,49 @@ class WishListViewController: UIViewController {
     private let searchController = UISearchController()
     private var content: [Content] = []
     private let segueIdentifier = "showContentDetailVC"
-
+    private var currentSortOption: SortOptions = SortOptions.allCases.first ?? SortOptions.byInsertion
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
+        setupPopup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         content = wishListService.listAll()
+        sortContent()
         tableView.reloadData()
+    }
+    
+    func setupPopup() {
+        sortButton.menu = UIMenu(title: "Ordenar por", subtitle: nil, image: UIImage(systemName: "clock"), identifier: nil, options: .displayInline, children: SortOptions.allCases.map({ option in
+            return UIAction(title: option.rawValue) { [weak self] _ in
+                self?.currentSortOption = option
+                self?.sortContent()
+                self?.tableView.reloadData()
+            }
+        }))
+        sortButton.showsMenuAsPrimaryAction = true
+    }
+    
+    
+    func sortContent() {
+        switch currentSortOption {
+        case .byInsertion:
+            content.sort { $0.wishedDate ?? .now > $1.wishedDate ?? .now }
+        case .byRelease:
+            content.sort { $0.releaseDate() < $1.releaseDate() }
+        case .byTitle:
+            content.sort { $0.title < $1.title }
+        }
     }
     
     private func setupViewController() {
         setupSearchController()
         setupTableView()
         content = wishListService.listAll()
+        sortContent()
     }
     
     private func setupSearchController() {
@@ -42,15 +85,6 @@ class WishListViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: ContentTableViewCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
-    }
-    
-    @IBAction func toggleAscending(_ sender: Any) {
-        wishListService.toggleAscending()
-        let buttonText = wishListService.isAscending() ? "A-Z" : "Z-A"
-        sortButton.setTitle(buttonText, for: .normal)
-        wishListService.sort()
-        content = wishListService.listAll()
-        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
