@@ -1,5 +1,22 @@
 import UIKit
 
+enum SortOptions: String, CaseIterable {
+    case byInsertion = "Inserção"
+    case byTitle = "Título"
+    case byRelease = "Lançamento"
+    
+    func image() -> UIImage {
+        switch self {
+        case .byTitle:
+            return UIImage(systemName: "clock") ?? UIImage()
+        case .byRelease:
+            return UIImage(systemName: "clock") ?? UIImage()
+        case .byInsertion:
+            return UIImage(systemName: "clock") ?? UIImage()
+        }
+    }
+}
+
 class WishListViewController: UIViewController {
     
     // Outlets
@@ -13,23 +30,51 @@ class WishListViewController: UIViewController {
     // Search
     private let searchController = UISearchController()
     private var content: [Content] = []
+    private let segueIdentifier = "showContentDetailVC"
+    private var currentSortOption: SortOptions = SortOptions.allCases.first ?? SortOptions.byInsertion
     private var contentType: ContentType? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
+        setupPopup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         content = wishListService.listAll(of: contentType)
+        sortContent()
         tableView.reloadData()
+    }
+    
+    func setupPopup() {
+        sortButton.menu = UIMenu(title: "Ordenar por", subtitle: nil, image: UIImage(systemName: "clock"), identifier: nil, options: .displayInline, children: SortOptions.allCases.map({ option in
+            return UIAction(title: option.rawValue) { [weak self] _ in
+                self?.currentSortOption = option
+                self?.sortContent()
+                self?.tableView.reloadData()
+            }
+        }))
+        sortButton.showsMenuAsPrimaryAction = true
+    }
+    
+    
+    func sortContent() {
+        switch currentSortOption {
+        case .byInsertion:
+            content.sort { $0.wishedDate ?? .now > $1.wishedDate ?? .now }
+        case .byRelease:
+            content.sort { $0.releaseDate() < $1.releaseDate() }
+        case .byTitle:
+            content.sort { $0.title < $1.title }
+        }
     }
     
     private func setupViewController() {
         setupSearchController()
         setupTableView()
         content = wishListService.listAll(of: contentType)
+        sortContent()
     }
     
     private func setupSearchController() {
@@ -42,15 +87,17 @@ class WishListViewController: UIViewController {
         let nib = UINib(nibName: "ContentTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: ContentTableViewCell.identifier)
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
-    @IBAction func toggleAscending(_ sender: Any) {
-        wishListService.toggleAscending()
-        let buttonText = wishListService.isAscending() ? "A-Z" : "Z-A"
-        sortButton.setTitle(buttonText, for: .normal)
-        wishListService.sort()
-        content = wishListService.listAll(of: contentType)
-        tableView.reloadData()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let contentDetailVC = segue.destination as? ContentDetailViewController,
+              let content = sender as? Content else {
+                  return
+              }
+        
+        contentDetailVC.contentId = content.id
+        contentDetailVC.contentTitle = content.title
     }
     
     @IBAction func filterTapped(_ sender: Any) {
@@ -60,9 +107,9 @@ class WishListViewController: UIViewController {
         default: contentType = nil
         }
         content = wishListService.listAll(of: contentType)
+        sortContent()
         tableView.reloadData()
     }
-    
 }
 
 // MARK: - UITableViewDataSource
@@ -82,6 +129,15 @@ extension WishListViewController: UITableViewDataSource {
         cell.delegate = self
         cell.setup(content: content)
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension WishListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedContent = content[indexPath.row]
+        performSegue(withIdentifier: segueIdentifier, sender: selectedContent)
     }
 }
 

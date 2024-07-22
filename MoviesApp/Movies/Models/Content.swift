@@ -5,6 +5,21 @@
 //  Created by Lucas Martins on 15/06/24.
 //
 
+enum Months: String, CaseIterable {
+    case january = "Jan"
+    case february = "Feb"
+    case march = "Mar"
+    case april = "Apr"
+    case may = "May"
+    case june = "Jun"
+    case july = "Jul"
+    case agust = "Aug"
+    case september = "Sep"
+    case october = "Oct"
+    case november = "Nov"
+    case december = "Dec"
+}
+
 import Foundation
 
 struct Content: Codable, Equatable {
@@ -18,6 +33,7 @@ struct Content: Codable, Equatable {
     let poster: String?
     let seasons: String?
     
+    var wishedDate: Date?
     var rate: RateOptions = .unset
     var isWished: Bool = false
     var contentType: ContentType?
@@ -71,5 +87,16 @@ struct Content: Codable, Equatable {
         try container.encode(rate, forKey: .rate)
         try container.encode(isWished, forKey: .isWished)
         try container.encode(contentType, forKey: .contentType)
+    }
+    
+    func releaseDate() -> Date {
+        if let released = released {
+            let splited = released.split(separator: " ")
+            let month = Months.allCases.firstIndex(where: { $0 == Months(rawValue: String(splited[1])) }) ?? 0
+            let component = DateComponents(year: Int(String(splited[2])), month: month + 1, day: Int(String(splited[0])))
+            guard let date = Calendar.current.date(from: component) else { return .now }
+            return date
+        }
+        return .now
     }
 }

@@ -70,7 +70,6 @@ class ContentDetailViewController: UIViewController {
     
     private func updateWishButton() {
         guard let content = content else { return }
-        
         let isWished = wishListService.isWished(contentId: content.id)
         self.content?.isWished = isWished
         let wishIcon = isWished ? "clock.fill" : "clock"
@@ -121,6 +120,7 @@ class ContentDetailViewController: UIViewController {
         content.contentType = contentType
         
         if content.isWished {
+            content.wishedDate = .now
             wishListService.removeContent(withId: content.id)
         } else {
             wishListService.addContent(content)
