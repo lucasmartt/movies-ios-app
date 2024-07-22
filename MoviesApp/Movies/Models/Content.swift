@@ -17,6 +17,7 @@ struct Content: Codable, Equatable {
     let plot: String?
     let poster: String?
     let seasons: String?
+    let actors: String?
     
     var rate: RateOptions = .unset
     var isWished: Bool = false
@@ -33,6 +34,7 @@ struct Content: Codable, Equatable {
         case plot = "Plot"
         case poster = "Poster"
         case seasons = "totalSeasons"
+        case actors = "Actors"
         
         case rate = "appRate"
         case isWished = "appIsWished"
@@ -50,6 +52,7 @@ struct Content: Codable, Equatable {
         plot = try container.decodeIfPresent(String.self, forKey: .plot)
         poster = try container.decodeIfPresent(String.self, forKey: .poster)
         seasons = try container.decodeIfPresent(String.self, forKey: .seasons)
+        actors = try container.decodeIfPresent(String.self, forKey: .actors)
         
         rate = try container.decodeIfPresent(RateOptions.self, forKey: .rate) ?? .unset
         isWished = try container.decodeIfPresent(Bool.self, forKey: .isWished) ?? false
