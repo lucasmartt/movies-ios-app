@@ -18,6 +18,7 @@ class ContentDetailViewController: UIViewController {
     @IBOutlet weak var contentReleasedLabel: UILabel!
     @IBOutlet weak var contentLanguageLabel: UILabel!
     @IBOutlet weak var contentPlotLabel: UILabel!
+    @IBOutlet weak var contentCastLabel: UILabel!
     
     @IBOutlet weak var contentRatingsSegCtrl: UISegmentedControl!
     
@@ -65,6 +66,7 @@ class ContentDetailViewController: UIViewController {
         contentLanguageLabel.text = content?.language
         contentReleasedLabel.text = content?.released
         contentPlotLabel.text = content?.plot
+        contentCastLabel.text = content?.actors
         updateWishButton()
     }
     
