@@ -66,7 +66,17 @@ class ContentDetailViewController: UIViewController {
         contentLanguageLabel.text = content?.language
         contentReleasedLabel.text = content?.released
         contentPlotLabel.text = content?.plot
-        contentCastLabel.text = content?.actors
+//        contentCastLabel.text = content?.actors
+        
+        if let actors = content?.actors, let director = content?.director {
+                contentCastLabel.text = "Director: \(director)\n\nActors: \(actors)"
+            } else if let actors = content?.actors {
+                contentCastLabel.text = "Actors: \(actors)"
+            } else if let director = content?.director {
+                contentCastLabel.text = "Director: \(director)"
+            } else {
+                contentCastLabel.text = ""
+            }
         updateWishButton()
     }
     
