@@ -27,6 +27,8 @@ class RateService {
         ratedContent.contains { $0.id == contentId }
     }
     
+    var count: Int { ratedContent.count }
+    
     private func persistRatings() {
         do {
             for c in ratedContent {
@@ -64,6 +66,10 @@ class RateService {
     
     private func getContentIndex(forId id: String) -> Int? {
         return ratedContent.firstIndex(where: { $0.id == id })
+    }
+    
+    func getContent(by indexPath: IndexPath) -> Content {
+        ratedContent[indexPath.row]
     }
     
     func getRate(withId id: String) -> RateOptions {
