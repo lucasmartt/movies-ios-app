@@ -32,7 +32,7 @@ class ContentTableViewCell: UITableViewCell {
         contentGenreLabel.text = content.genre ?? "Undefined"
         
         contentImageView.layer.masksToBounds = true
-        contentImageView.layer.cornerRadius = 4
+        contentImageView.layer.cornerRadius = content.contentType == .series ? contentImageView.bounds.height/2 : 4
         contentImageView.layer.borderWidth = 1
         contentImageView.layer.borderColor = UIColor.black.cgColor
         

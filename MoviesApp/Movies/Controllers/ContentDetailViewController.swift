@@ -19,13 +19,17 @@ class ContentDetailViewController: UIViewController {
     @IBOutlet weak var contentLanguageLabel: UILabel!
     @IBOutlet weak var contentPlotLabel: UILabel!
     
+    @IBOutlet weak var contentRatingsSegCtrl: UISegmentedControl!
+    
     // Services
     var contentService = ContentService()
     var wishListService = WishListService.shared
+    var rateService = RateService.shared
     
     // Data
     var contentId: String?
     var contentTitle: String?
+    var contentType: ContentType?
     private var content: Content?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +53,7 @@ class ContentDetailViewController: UIViewController {
             }
             
             DispatchQueue.main.async {
+                self.addRateOptions()
                 self.updateViewData()
             }
         }
@@ -80,8 +85,39 @@ class ContentDetailViewController: UIViewController {
         }
     }
     
+    private func addRateOptions() {
+        guard let content = content else { return }
+        let rate = rateService.getRate(withId: content.id)
+        contentRatingsSegCtrl.removeAllSegments()
+        for (index, option) in RateOptions.allCases.enumerated() {
+            contentRatingsSegCtrl.insertSegment(withTitle: option.rawValue, at: index, animated: false)
+            if option == rate {
+                contentRatingsSegCtrl.selectedSegmentIndex = index
+            }
+        }
+    }
+    
+    @IBAction func ratingValueChanged(_ sender: Any) {
+        guard let content = content else { return }
+
+        let newRate = RateOptions.allCases[contentRatingsSegCtrl.selectedSegmentIndex]
+
+        if newRate == .unset {
+            if rateService.isRated(contentId: content.id) {
+                rateService.removeContent(withId: content.id)
+            }
+        } else {
+            if !rateService.isRated(contentId: content.id) {
+                rateService.addContent(content)
+            }
+            rateService.updateRate(forId: content.id, newRate: newRate)
+        }
+        //print(self.content ?? "")
+    }
+    
     @IBAction func didTapWishButton(_ sender: Any) {
         guard var content = content else { return }
+        content.contentType = contentType
         
         if content.isWished {
             content.wishedDate = .now
