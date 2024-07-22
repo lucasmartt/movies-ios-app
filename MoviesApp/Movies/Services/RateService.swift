@@ -26,9 +26,7 @@ class RateService {
     func isRated(contentId: String) -> Bool {
         ratedContent.contains { $0.id == contentId }
     }
-    
-    var count: Int { ratedContent.count }
-    
+        
     private func persistRatings() {
         do {
             for c in ratedContent {
@@ -68,8 +66,9 @@ class RateService {
         return ratedContent.firstIndex(where: { $0.id == id })
     }
     
-    func getContent(by indexPath: IndexPath) -> Content {
-        ratedContent[indexPath.row]
+    func getContent(by rating: RateOptions) -> [Content] {
+        if rating == .unset { return ratedContent }
+        return ratedContent.filter({$0.rate == rating})
     }
     
     func getRate(withId id: String) -> RateOptions {

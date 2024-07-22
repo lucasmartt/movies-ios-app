@@ -12,6 +12,7 @@ class ReviewsListViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     private let service = RateService.shared
+    private var ratedContent: [Content] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,6 @@ class ReviewsListViewController: UIViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-    
     
     private let searchController = UISearchController()
     
@@ -51,23 +51,32 @@ class ReviewsListViewController: UIViewController {
         segmentedControl.removeSegment(at: 0, animated: false)
         
         segmentedControl.insertSegment(withTitle: "All", at: 0, animated: false)
-            
+        segmentedControl.selectedSegmentIndex = 0
+        setupRatedContent()
     }
     
+    func setupRatedContent() {
+        ratedContent = service.getContent(by: RateOptions.allCases[segmentedControl.selectedSegmentIndex])
+    }
+    
+    @IBAction func segmentedTapped(_ sender: Any) {
+        setupRatedContent()
+        tableView.reloadData()
+    }
 }
 
 extension ReviewsListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        service.count
+        ratedContent.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTableViewCell.identifier, for: indexPath) as? ContentTableViewCell else { return UITableViewCell() }
-        
-        let content = service.getContent(by: indexPath)
-        cell.setup(content: content)
+        cell.delegate = self
+        let content = ratedContent[indexPath.row]
+        cell.setup(content: content, acessoryImage: UIImage(systemName: "star.fill"))
         return cell
     }
     
@@ -78,6 +87,14 @@ extension ReviewsListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text ?? ""
         
+        tableView.reloadData()
+    }
+}
+
+extension ReviewsListViewController: ContentTableViewCellDelegate {
+    func didTapWishButton(forContent content: Content) {
+        service.removeContent(withId: content.id)
+        setupRatedContent()
         tableView.reloadData()
     }
 }
