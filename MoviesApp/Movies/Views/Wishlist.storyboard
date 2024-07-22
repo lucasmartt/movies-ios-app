@@ -44,7 +44,7 @@
                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Sed-s8-YOz"/>
                                         <barButtonItem style="plain" id="inr-4s-5zh">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="TTo-gE-RBa">
-                                                <rect key="frame" x="311" y="4.5" width="83" height="35"/>
+                                                <rect key="frame" x="341" y="4.5" width="53" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="A-Z"/>
