@@ -22,7 +22,11 @@ class WishListViewController: UIViewController {
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortButton: UIButton!
-
+    @IBOutlet weak var emptyStateView: UIView!
+    @IBOutlet weak var emptyStateIcon: UIImageView!
+    @IBOutlet weak var emptyStateTitle: UILabel!
+    @IBOutlet weak var emptyStateDescription: UILabel!
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     // Services
     var wishListService = WishListService.shared
@@ -76,6 +80,55 @@ class WishListViewController: UIViewController {
         content = wishListService.listAll(of: contentType)
         sortContent()
     }
+    
+    private func updateEmptyState(isHidden: Bool, emptyStateIcon: String, emptyStateTitle: String, emptyStateDescription: String) {
+        self.emptyStateView.isHidden = isHidden
+        self.emptyStateIcon.image = UIImage(systemName: emptyStateIcon)
+        self.emptyStateTitle.text = emptyStateTitle
+        self.emptyStateDescription.text = emptyStateDescription
+    }
+    
+    private func loadContent(withTitle contentTitle: String) {
+        self.content = []
+        var isHidden: Bool = false
+        var emptyStateIcon: String = ""
+        var emptyStateTitle: String = ""
+        var emptyStateDescription: String = ""
+        
+        if (contentTitle == "") {
+            emptyStateIcon = "rollsoffilm"
+            emptyStateTitle = "no movies on your wish list."
+            emptyStateDescription = "Add a movie to watch later!"
+            self.updateEmptyState(
+                isHidden: isHidden,
+                emptyStateIcon: emptyStateIcon,
+                emptyStateTitle: emptyStateTitle,
+                emptyStateDescription: emptyStateDescription
+            )
+        } else {
+            let contents = wishListService.searchContent(by: contentTitle)
+            
+            
+            if (contents.isEmpty) {
+                emptyStateIcon = "exclamationmark.triangle.fill"
+                emptyStateTitle = "No Results"
+                emptyStateDescription = "No items found matching your search." //Please try again with a different term.
+            } else {
+                isHidden = true
+                self.content = contents
+            }
+            self.updateEmptyState(
+                isHidden: isHidden,
+                emptyStateIcon: emptyStateIcon,
+                emptyStateTitle: emptyStateTitle,
+                emptyStateDescription: emptyStateDescription
+            )
+            self.tableView.reloadData()
+        }
+    }
+    
+    //Image: "wifi.slash" Title: "No Connection" Description: "Check your internet connection and try again."
+    
     
     private func setupSearchController() {
         searchController.searchResultsUpdater = self

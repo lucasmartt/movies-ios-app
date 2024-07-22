@@ -24,6 +24,10 @@ class WishListService {
         wishedContent.contains { $0.id == contentId }
     }
     
+    func searchContent(by text: String) -> [Content] {
+        wishedContent.filter({$0.title.contains(text)})
+    }
+    
     private func persistWishList() {
         do {
             let data = try encoder.encode(wishedContent)
