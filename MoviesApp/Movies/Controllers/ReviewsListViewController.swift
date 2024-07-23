@@ -23,6 +23,7 @@ class ReviewsListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupRatedContent()
         tableView.reloadData()
     }
     
@@ -87,7 +88,21 @@ extension ReviewsListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text ?? ""
         
+        if searchText.isEmpty {
+            setupRatedContent()
+            segmentedControl.isHidden = false
+        } else {
+            ratedContent = filteredTitles(byTitle: searchText)
+            segmentedControl.isHidden = true
+        }
+        
         tableView.reloadData()
+    }
+    
+    private func filteredTitles(byTitle contentTitle: String) -> [Content] {
+        service.listAll().filter({ content in
+            content.title.lowercased().contains(contentTitle.lowercased())
+        })
     }
 }
 
