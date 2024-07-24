@@ -44,13 +44,10 @@
                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Sed-s8-YOz"/>
                                         <barButtonItem style="plain" id="inr-4s-5zh">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="TTo-gE-RBa">
-                                                <rect key="frame" x="341" y="4.5" width="53" height="35"/>
+                                                <rect key="frame" x="286" y="4.5" width="108" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="A-Z"/>
-                                                <connections>
-                                                    <action selector="toggleAscending:" destination="GnH-dN-AcG" eventType="touchUpInside" id="Ma2-XX-kWr"/>
-                                                </connections>
+                                                <buttonConfiguration key="configuration" style="plain" title="Ordenação"/>
                                             </button>
                                         </barButtonItem>
                                     </items>
@@ -83,7 +80,7 @@
                     <navigationItem key="navigationItem" title="Wish List" id="dBU-eh-caa"/>
                     <connections>
                         <outlet property="segmentedControl" destination="oPy-nH-SvX" id="r3m-1S-eN1"/>
-                        <outlet property="sortButton" destination="TTo-gE-RBa" id="mNP-E8-9xe"/>
+                        <outlet property="sortButton" destination="TTo-gE-RBa" id="j0w-V8-05C"/>
                         <outlet property="tableView" destination="Jeq-Uc-2ke" id="oKZ-Bd-6BG"/>
                     </connections>
                 </viewController>
