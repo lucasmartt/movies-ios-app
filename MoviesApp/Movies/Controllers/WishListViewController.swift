@@ -23,6 +23,10 @@ class WishListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortButton: UIButton!
 
+    @IBOutlet weak var emptyState: UIStackView!
+    @IBOutlet weak var emptyStateIcon: UIImageView!
+    @IBOutlet weak var emptyStateTitle: UILabel!
+    @IBOutlet weak var emptyStateDescription: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     // Services
     var wishListService = WishListService.shared
@@ -82,6 +86,33 @@ class WishListViewController: UIViewController {
         sortContent()
     }
     
+    private func updateEmptyState(isHidden: Bool) {
+        emptyState.isHidden = isHidden
+        if !isHidden {
+            
+            if !(searchController.searchBar.text?.isEmpty ?? false) {
+                // didnt find any content
+                self.emptyStateIcon.image = UIImage(systemName: "exclamationmark.triangle.fill")
+                self.emptyStateTitle.text =  "No Results."
+                self.emptyStateDescription.text =  "No items found matching your search."
+            } else {
+                if let contentType = self.contentType {
+                    // select movie or serie type
+                    self.emptyStateIcon.image = UIImage(systemName: contentType == .movie ? "film" : "play.tv")
+                    self.emptyStateTitle.text =  contentType == .movie ? "No film found" : "No series found"
+                    self.emptyStateDescription.text =  contentType == .movie ? "Add a movie to watch later" : "Add a series to watch later"
+                } else {
+                    // selected all option
+                    self.emptyStateIcon.image = UIImage(systemName: "list.and.film")
+                    self.emptyStateTitle.text =  "No title found"
+                    self.emptyStateDescription.text =  "Add a series or movie to watch later"
+                }
+            }
+            
+        
+        }
+    }
+    
     
     private func setupTableView() {
         let nib = UINib(nibName: "ContentTableViewCell", bundle: nil)
@@ -116,7 +147,9 @@ class WishListViewController: UIViewController {
 
 extension WishListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        content.count
+        
+        updateEmptyState(isHidden: !content.isEmpty)
+        return content.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
