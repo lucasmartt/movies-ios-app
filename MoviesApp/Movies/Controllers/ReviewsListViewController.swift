@@ -14,6 +14,8 @@ class ReviewsListViewController: UIViewController {
     private let service = RateService.shared
     private var ratedContent: [Content] = []
     
+    private let segueIdentifier = "showContentDetailVC"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Reviews"
@@ -40,6 +42,7 @@ class ReviewsListViewController: UIViewController {
         let cell = UINib(nibName: "ContentTableViewCell", bundle: nil)
         tableView.register(cell, forCellReuseIdentifier: ContentTableViewCell.identifier)
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     
@@ -112,5 +115,13 @@ extension ReviewsListViewController: ContentTableViewCellDelegate {
         service.removeContent(withId: content.id)
         setupRatedContent()
         tableView.reloadData()
+    }
+}
+
+extension ReviewsListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedContent = ratedContent[indexPath.row]
+        print("clicou")
+        performSegue(withIdentifier: segueIdentifier, sender: selectedContent)
     }
 }
