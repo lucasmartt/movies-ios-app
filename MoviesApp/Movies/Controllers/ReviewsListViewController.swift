@@ -85,6 +85,15 @@ extension ReviewsListViewController: UITableViewDataSource {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let contentDetailVC = segue.destination as? ContentDetailViewController,
+              let content = sender as? Content else {
+                  return
+              }
+        
+        contentDetailVC.contentId = content.id
+        contentDetailVC.contentTitle = content.title
+    }
     
 }
 
@@ -121,7 +130,6 @@ extension ReviewsListViewController: ContentTableViewCellDelegate {
 extension ReviewsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedContent = ratedContent[indexPath.row]
-        print("clicou")
         performSegue(withIdentifier: segueIdentifier, sender: selectedContent)
     }
 }
