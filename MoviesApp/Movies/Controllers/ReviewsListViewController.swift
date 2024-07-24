@@ -16,6 +16,7 @@ class ReviewsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Reviews"
         setupSearchController()
         addRateOptions()
         setupTableViewCell()

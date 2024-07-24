@@ -58,6 +58,11 @@ class WishListViewController: UIViewController {
         sortButton.showsMenuAsPrimaryAction = true
     }
     
+    private func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+    }
     
     func sortContent() {
         switch currentSortOption {
@@ -77,11 +82,6 @@ class WishListViewController: UIViewController {
         sortContent()
     }
     
-    private func setupSearchController() {
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Search"
-        navigationItem.searchController = searchController
-    }
     
     private func setupTableView() {
         let nib = UINib(nibName: "ContentTableViewCell", bundle: nil)
@@ -121,11 +121,9 @@ extension WishListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTableViewCell.identifier, for: indexPath) as? ContentTableViewCell else {
-            return UITableViewCell()
-        }
-        
+                return UITableViewCell()
+            }
         let content = content[indexPath.row]
-        
         cell.delegate = self
         cell.setup(content: content)
         return cell
