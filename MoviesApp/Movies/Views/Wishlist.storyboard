@@ -44,7 +44,7 @@
                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Sed-s8-YOz"/>
                                         <barButtonItem style="plain" id="inr-4s-5zh">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="TTo-gE-RBa">
-                                                <rect key="frame" x="286" y="4.5" width="108" height="35"/>
+                                                <rect key="frame" x="286" y="5" width="108" height="34.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Ordenação"/>
@@ -82,11 +82,22 @@
                         <outlet property="segmentedControl" destination="oPy-nH-SvX" id="r3m-1S-eN1"/>
                         <outlet property="sortButton" destination="TTo-gE-RBa" id="j0w-V8-05C"/>
                         <outlet property="tableView" destination="Jeq-Uc-2ke" id="oKZ-Bd-6BG"/>
+                        <segue destination="VTO-cc-Yrv" kind="show" identifier="showContentDetailVC" id="Tl1-sA-pQv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xb8-Ms-Xsb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="828.98550724637687" y="1483.2589285714284"/>
+        </scene>
+        <!--ContentDetails-->
+        <scene sceneID="beG-Ib-2M2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ContentDetails" id="VTO-cc-Yrv" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="yzU-4n-jU5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sqN-JG-aUr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="1878"/>
         </scene>
     </scenes>
     <resources>

@@ -8,21 +8,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Reviews List View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="ReviewsListViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hED-t2-iZt">
+                                <rect key="frame" x="0.0" y="179" width="414" height="634"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gcc-Ic-ICQ">
+                                <rect key="frame" x="10" y="140" width="394" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedTapped:" destination="Y6W-OH-hqX" eventType="valueChanged" id="2vx-pX-1Mu"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hED-t2-iZt" firstAttribute="top" secondItem="gcc-Ic-ICQ" secondAttribute="bottom" constant="8" id="9Ld-Yn-RSA"/>
+                            <constraint firstItem="hED-t2-iZt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9kD-TU-wq7"/>
+                            <constraint firstItem="gcc-Ic-ICQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="H0S-6W-Ncw"/>
+                            <constraint firstItem="hED-t2-iZt" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="KSS-2E-Ahf"/>
+                            <constraint firstItem="gcc-Ic-ICQ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="THg-GB-PEo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gcc-Ic-ICQ" secondAttribute="trailing" constant="10" id="Y2p-9h-Jio"/>
+                            <constraint firstItem="hED-t2-iZt" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="rzv-m0-TEs"/>
+                            <constraint firstItem="gcc-Ic-ICQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="um9-5I-gmU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RNb-7m-sec"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="gcc-Ic-ICQ" id="cwg-gc-wW9"/>
+                        <outlet property="tableView" destination="hED-t2-iZt" id="AOW-pq-SBK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="723"/>
+            <point key="canvasLocation" x="139.13043478260872" y="722.54464285714278"/>
         </scene>
         <!--Reviews-->
         <scene sceneID="di6-4Z-dt0">
@@ -31,8 +61,8 @@
                     <tabBarItem key="tabBarItem" title="Reviews" image="star" catalog="system" id="zTd-Um-6S3"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VqO-kY-SQ1">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="VqO-kY-SQ1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

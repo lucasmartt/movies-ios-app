@@ -68,6 +68,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="accessoryImage" destination="Nc0-bf-5f4" id="vcb-vs-WzT"/>
                 <outlet property="contentGenreLabel" destination="44B-Cj-QYp" id="sqy-eu-s26"/>
                 <outlet property="contentImageView" destination="Zqa-SK-NkD" id="oLl-ho-awu"/>
                 <outlet property="contentTitleLabel" destination="u9x-IX-yvN" id="sK2-M4-OAA"/>
