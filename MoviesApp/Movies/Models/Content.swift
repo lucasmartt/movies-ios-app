@@ -32,6 +32,8 @@ struct Content: Codable, Equatable {
     let plot: String?
     let poster: String?
     let seasons: String?
+    let actors: String?
+    let director: String?
     
     var wishedDate: Date?
     var rate: RateOptions = .unset
@@ -49,6 +51,8 @@ struct Content: Codable, Equatable {
         case plot = "Plot"
         case poster = "Poster"
         case seasons = "totalSeasons"
+        case actors = "Actors"
+        case director = "Director"
         
         case rate = "appRate"
         case isWished = "appIsWished"
@@ -66,6 +70,8 @@ struct Content: Codable, Equatable {
         plot = try container.decodeIfPresent(String.self, forKey: .plot)
         poster = try container.decodeIfPresent(String.self, forKey: .poster)
         seasons = try container.decodeIfPresent(String.self, forKey: .seasons)
+        actors = try container.decodeIfPresent(String.self, forKey: .actors)
+        director = try container.decodeIfPresent(String.self, forKey: .director)
         
         rate = try container.decodeIfPresent(RateOptions.self, forKey: .rate) ?? .unset
         isWished = try container.decodeIfPresent(Bool.self, forKey: .isWished) ?? false
