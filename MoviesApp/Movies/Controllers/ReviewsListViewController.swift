@@ -81,7 +81,7 @@ extension ReviewsListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTableViewCell.identifier, for: indexPath) as? ContentTableViewCell else { return UITableViewCell() }
         cell.delegate = self
         let content = ratedContent[indexPath.row]
-        cell.setup(content: content, acessoryImage: UIImage(systemName: "star.fill"))
+        cell.setup(content: content, acessoryImage: content.rate.rawValue)
         return cell
     }
     
