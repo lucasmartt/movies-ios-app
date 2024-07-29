@@ -110,8 +110,9 @@ class ContentDetailViewController: UIViewController {
     }
     
     @IBAction func ratingValueChanged(_ sender: Any) {
-        guard let content = content else { return }
-
+        guard var content = content else { return }
+        content.contentType = self.contentType
+        
         let newRate = RateOptions.allCases[contentRatingsSegCtrl.selectedSegmentIndex]
 
         if newRate == .unset {
@@ -124,7 +125,6 @@ class ContentDetailViewController: UIViewController {
             }
             rateService.updateRate(forId: content.id, newRate: newRate)
         }
-        //print(self.content ?? "")
     }
     
     @IBAction func didTapWishButton(_ sender: Any) {
