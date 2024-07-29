@@ -84,11 +84,22 @@
                         <outlet property="emptyStateTitle" destination="N3v-UQ-gOa" id="5dO-DW-0E7"/>
                         <outlet property="segmentedControl" destination="gcc-Ic-ICQ" id="cwg-gc-wW9"/>
                         <outlet property="tableView" destination="hED-t2-iZt" id="AOW-pq-SBK"/>
+                        <segue destination="nHa-M2-fAR" kind="show" identifier="showContentDetailVC" id="XUw-am-Mfc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139.13043478260872" y="722.54464285714278"/>
+        </scene>
+        <!--ContentDetails-->
+        <scene sceneID="4mi-3Q-czr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ContentDetails" id="nHa-M2-fAR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Qxa-96-rNU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZS-w4-RQM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="1193"/>
         </scene>
         <!--Reviews-->
         <scene sceneID="di6-4Z-dt0">

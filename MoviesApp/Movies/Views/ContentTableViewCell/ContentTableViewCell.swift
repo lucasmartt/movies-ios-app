@@ -27,7 +27,7 @@ class ContentTableViewCell: UITableViewCell {
     // Data
     private var content: Content?
     
-    func setup(content: Content, acessoryImage: UIImage? = nil) {
+    func setup(content: Content, acessoryImage: String? = nil) {
         self.content = content
         contentTitleLabel.text = content.title
         contentGenreLabel.text = content.genre ?? "Undefined"
@@ -37,7 +37,8 @@ class ContentTableViewCell: UITableViewCell {
         contentImageView.layer.borderColor = UIColor.black.cgColor
         
         if let acessoryImage = acessoryImage {
-            accessoryImage.setImage(acessoryImage, for: .normal)
+            accessoryImage.setImage(nil, for: .normal)
+            accessoryImage.setTitle(acessoryImage, for: .normal)
         }
         
         // Load title's poster from URL
