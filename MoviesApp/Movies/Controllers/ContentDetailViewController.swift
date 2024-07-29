@@ -132,9 +132,9 @@ class ContentDetailViewController: UIViewController {
         content.contentType = contentType
         
         if content.isWished {
-            content.wishedDate = .now
             wishListService.removeContent(withId: content.id)
         } else {
+            content.wishedDate = .now
             wishListService.addContent(content)
         }
         
