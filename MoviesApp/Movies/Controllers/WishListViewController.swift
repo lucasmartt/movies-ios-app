@@ -1,9 +1,9 @@
 import UIKit
 
 enum SortOptions: String, CaseIterable {
-    case byInsertion = "Inserção"
-    case byTitle = "Título"
-    case byRelease = "Lançamento"
+    case byInsertion = "Insertion date"
+    case byTitle = "Title"
+    case byRelease = "Release date"
     
     func image() -> UIImage {
         switch self {
@@ -52,7 +52,7 @@ class WishListViewController: UIViewController {
     }
     
     func setupPopup() {
-        sortButton.menu = UIMenu(title: "Ordenar por", subtitle: nil, image: UIImage(systemName: "clock"), identifier: nil, options: .displayInline, children: SortOptions.allCases.map({ option in
+        sortButton.menu = UIMenu(title: "Sort by", subtitle: nil, image: UIImage(systemName: "clock"), identifier: nil, options: .displayInline, children: SortOptions.allCases.map({ option in
             return UIAction(title: option.rawValue) { [weak self] _ in
                 self?.currentSortOption = option
                 self?.sortContent()

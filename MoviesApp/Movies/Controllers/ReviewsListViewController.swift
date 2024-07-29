@@ -11,6 +11,11 @@ class ReviewsListViewController: UIViewController {
         
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyState: UIStackView!
+    @IBOutlet weak var emptyStateIcon: UIImageView!
+    @IBOutlet weak var emptyStateDescription: UILabel!
+    @IBOutlet weak var emptyStateTitle: UILabel!
+    
     private let service = RateService.shared
     private var ratedContent: [Content] = []
     
@@ -45,6 +50,34 @@ class ReviewsListViewController: UIViewController {
         tableView.delegate = self
     }
     
+    private func updateEmptyState(isHidden: Bool) {
+        self.emptyState.isHidden = isHidden
+        
+        if !isHidden {
+        
+            if !(searchController.searchBar.text?.isEmpty ?? false) {
+                // tentou buscar e não encotrou
+                self.emptyStateIcon.image = UIImage(systemName:
+                "magnifyingglass")
+                self.emptyStateTitle.text = "No Results"
+                self.emptyStateDescription.text = "No items found matching your search."
+            } else {
+                if segmentedControl.selectedSegmentIndex == 0 {
+                    // esta na aba all, então: nenhum conteudo foi avaliado
+                    self.emptyStateIcon.image = UIImage(systemName: "exclamationmark.triangle.fill")
+                    self.emptyStateTitle.text = "No reviews"
+                    self.emptyStateDescription.text = "There is no reviews yet"
+                } else {
+                    // esta em outra aba que não foi avaliada, então: nenhum conteudo nessa categoria
+                    self.emptyStateIcon.image = UIImage(systemName: "tray.fill")
+                    self.emptyStateTitle.text = "No reviews"
+                    self.emptyStateDescription.text = "There is no reviews in this category"
+                }
+            }
+            
+           
+        }
+    }
     
     private func addRateOptions() {
         segmentedControl.removeAllSegments()
@@ -73,7 +106,8 @@ class ReviewsListViewController: UIViewController {
 extension ReviewsListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ratedContent.count
+        self.updateEmptyState(isHidden: !ratedContent.isEmpty)
+        return ratedContent.count
     }
     
     

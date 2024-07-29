@@ -8,11 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Wish List-->
+        <!--Wishlist-->
         <scene sceneID="QY9-eZ-JOY">
             <objects>
                 <navigationController id="N6R-g6-DeO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wish List" image="clock" catalog="system" selectedImage="clock.fill" id="W50-ab-Nt4"/>
+                    <tabBarItem key="tabBarItem" title="Wishlist" image="clock" catalog="system" id="W50-ab-Nt4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tsg-9O-DAC">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="830" y="756"/>
         </scene>
-        <!--Wish List-->
+        <!--Wishlist-->
         <scene sceneID="HpH-ee-b0e">
             <objects>
                 <viewController id="GnH-dN-AcG" customClass="WishListViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,7 +47,7 @@
                                                 <rect key="frame" x="286" y="5" width="108" height="34.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Ordenação"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Sort"/>
                                             </button>
                                         </barButtonItem>
                                     </items>
@@ -65,7 +65,7 @@
                                 </connections>
                             </segmentedControl>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Elz-Xf-Jdb">
-                                <rect key="frame" x="0.0" y="373" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="391" width="414" height="150"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sZJ-Dp-nXe">
                                         <rect key="frame" x="167" y="0.0" width="80" height="80"/>
@@ -105,6 +105,7 @@
                         <constraints>
                             <constraint firstItem="Elz-Xf-Jdb" firstAttribute="centerX" secondItem="QZH-kT-Jc4" secondAttribute="centerX" id="5Td-Zs-Mra"/>
                             <constraint firstItem="Jeq-Uc-2ke" firstAttribute="leading" secondItem="Nz1-NR-ytA" secondAttribute="leading" id="6hS-Ec-PhP"/>
+                            <constraint firstItem="Elz-Xf-Jdb" firstAttribute="centerY" secondItem="Jeq-Uc-2ke" secondAttribute="centerY" id="DVQ-yh-Vzz"/>
                             <constraint firstItem="Nz1-NR-ytA" firstAttribute="trailing" secondItem="Jeq-Uc-2ke" secondAttribute="trailing" id="MGg-7H-XVG"/>
                             <constraint firstItem="Nz1-NR-ytA" firstAttribute="trailing" secondItem="oPy-nH-SvX" secondAttribute="trailing" constant="10" id="R3P-Jb-6Jx"/>
                             <constraint firstItem="Nz1-NR-ytA" firstAttribute="bottom" secondItem="Jeq-Uc-2ke" secondAttribute="bottom" id="SE6-Oq-Xe9"/>
@@ -112,11 +113,10 @@
                             <constraint firstItem="oPy-nH-SvX" firstAttribute="leading" secondItem="Nz1-NR-ytA" secondAttribute="leading" constant="10" id="mia-yo-5MY"/>
                             <constraint firstItem="Jeq-Uc-2ke" firstAttribute="top" secondItem="oPy-nH-SvX" secondAttribute="bottom" id="r0E-PP-RG4"/>
                             <constraint firstItem="oPy-nH-SvX" firstAttribute="top" secondItem="Nz1-NR-ytA" secondAttribute="top" id="ssn-c1-HJs"/>
-                            <constraint firstItem="Elz-Xf-Jdb" firstAttribute="centerY" secondItem="QZH-kT-Jc4" secondAttribute="centerY" id="uaE-Ir-mEb"/>
                             <constraint firstItem="Elz-Xf-Jdb" firstAttribute="leading" secondItem="Nz1-NR-ytA" secondAttribute="leading" id="xnE-W0-udz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Wish List" id="dBU-eh-caa"/>
+                    <navigationItem key="navigationItem" title="Wishlist" id="dBU-eh-caa"/>
                     <connections>
                         <outlet property="emptyState" destination="Elz-Xf-Jdb" id="nYr-VJ-Il8"/>
                         <outlet property="emptyStateDescription" destination="JGF-P4-XrC" id="Tgt-cl-WkU"/>
@@ -145,7 +145,6 @@
     </scenes>
     <resources>
         <image name="clock" catalog="system" width="128" height="121"/>
-        <image name="clock.fill" catalog="system" width="128" height="121"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
