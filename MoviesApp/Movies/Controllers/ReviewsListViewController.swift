@@ -14,6 +14,8 @@ class ReviewsListViewController: UIViewController {
     private let service = RateService.shared
     private var ratedContent: [Content] = []
     
+    private let segueIdentifier = "showContentDetailVC"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Reviews"
@@ -40,6 +42,7 @@ class ReviewsListViewController: UIViewController {
         let cell = UINib(nibName: "ContentTableViewCell", bundle: nil)
         tableView.register(cell, forCellReuseIdentifier: ContentTableViewCell.identifier)
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     
@@ -78,10 +81,19 @@ extension ReviewsListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTableViewCell.identifier, for: indexPath) as? ContentTableViewCell else { return UITableViewCell() }
         cell.delegate = self
         let content = ratedContent[indexPath.row]
-        cell.setup(content: content, acessoryImage: UIImage(systemName: "star.fill"))
+        cell.setup(content: content, acessoryImage: content.rate.rawValue)
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let contentDetailVC = segue.destination as? ContentDetailViewController,
+              let content = sender as? Content else {
+                  return
+              }
+        
+        contentDetailVC.contentId = content.id
+        contentDetailVC.contentTitle = content.title
+    }
     
 }
 
@@ -112,5 +124,12 @@ extension ReviewsListViewController: ContentTableViewCellDelegate {
         service.removeContent(withId: content.id)
         setupRatedContent()
         tableView.reloadData()
+    }
+}
+
+extension ReviewsListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedContent = ratedContent[indexPath.row]
+        performSegue(withIdentifier: segueIdentifier, sender: selectedContent)
     }
 }
