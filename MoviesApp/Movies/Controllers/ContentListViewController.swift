@@ -40,7 +40,7 @@ class ContentListViewController: UIViewController {
     }
     
     private func setupViewController() {
-        self.title = "Home"
+        self.title = "Search"
         self.navigationItem.title = contentType == .movie ? "Movies" : "Series"
         setupSearchController()
         setupCollectionView()
