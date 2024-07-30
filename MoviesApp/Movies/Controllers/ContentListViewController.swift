@@ -40,7 +40,7 @@ class ContentListViewController: UIViewController {
     }
     
     private func setupViewController() {
-        self.title = "Home"
+        self.title = "Search"
         self.navigationItem.title = contentType == .movie ? "Movies" : "Series"
         setupSearchController()
         setupCollectionView()
@@ -115,6 +115,7 @@ class ContentListViewController: UIViewController {
         
         contentDetailVC.contentId = content.id
         contentDetailVC.contentTitle = content.title
+        contentDetailVC.contentType = contentType
     }
     
     @IBAction func segmentedControlAction(_ sender: Any) {

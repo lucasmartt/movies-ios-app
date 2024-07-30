@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F05ACFD2C449AF600E07B7E /* RateOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05ACFC2C449AF600E07B7E /* RateOptions.swift */; };
+		1F05ACFF2C44A5A400E07B7E /* RateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05ACFE2C44A5A400E07B7E /* RateService.swift */; };
+		1F05AD002C44B6B400E07B7E /* ContentDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */; };
 		1F8AD5472BEC3FC80012D740 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AD5462BEC3FC80012D740 /* ContentType.swift */; };
 		1FBA08AF2C2B59060001DD7F /* ContentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA08AE2C2B59060001DD7F /* ContentListViewController.swift */; };
 		1FF8CC6F2C1E4FA9009DC53D /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8CC6E2C1E4FA9009DC53D /* ContentService.swift */; };
@@ -24,13 +27,15 @@
 		2E2586E62BB5FA58006EF0BB /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586E32BB5FA58006EF0BB /* ContentDetailViewController.swift */; };
 		2E2586E72BB5FA58006EF0BB /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2586E42BB5FA58006EF0BB /* WishListViewController.swift */; };
 		2E2586ED2BB5FA76006EF0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2586EB2BB5FA76006EF0BB /* Assets.xcassets */; };
+		305F8ECA2C4E849C00FBA138 /* ReviewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305F8EC92C4E849C00FBA138 /* ReviewsListViewController.swift */; };
 		C0903FFE2C3C1BCA0077AEEE /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0903FFD2C3C1BCA0077AEEE /* Home.storyboard */; };
-		C091EFFA2C3C1E790041F6BE /* ContentDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */; };
 		C0CF0EB92C3C1DB1003C6FBC /* Reviews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CF0EB82C3C1DB1003C6FBC /* Reviews.storyboard */; };
 		C0D2FB442C3C1A81009BE8E9 /* WishList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D2FB432C3C1A81009BE8E9 /* WishList.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F05ACFC2C449AF600E07B7E /* RateOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateOptions.swift; sourceTree = "<group>"; };
+		1F05ACFE2C44A5A400E07B7E /* RateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateService.swift; sourceTree = "<group>"; };
 		1F8AD5462BEC3FC80012D740 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		1FBA08AE2C2B59060001DD7F /* ContentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListViewController.swift; sourceTree = "<group>"; };
 		1FF8CC6E2C1E4FA9009DC53D /* ContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentService.swift; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 		2E2586EA2BB5FA76006EF0BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E2586EB2BB5FA76006EF0BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E54F4A82BB5F734007B6D93 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		305F8EC92C4E849C00FBA138 /* ReviewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListViewController.swift; sourceTree = "<group>"; };
 		C0903FFD2C3C1BCA0077AEEE /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C091EFF92C3C1E790041F6BE /* ContentDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentDetails.storyboard; sourceTree = "<group>"; };
 		C0CF0EB82C3C1DB1003C6FBC /* Reviews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reviews.storyboard; sourceTree = "<group>"; };
@@ -72,6 +78,7 @@
 			children = (
 				2E2586CD2BB5F9A2006EF0BB /* WishListService.swift */,
 				1FF8CC6E2C1E4FA9009DC53D /* ContentService.swift */,
+				1F05ACFE2C44A5A400E07B7E /* RateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -91,6 +98,7 @@
 				2E2586CC2BB5F9A2006EF0BB /* Content.swift */,
 				1FF8CC702C1E53CE009DC53D /* ContentSearchResponse.swift */,
 				1F8AD5462BEC3FC80012D740 /* ContentType.swift */,
+				1F05ACFC2C449AF600E07B7E /* RateOptions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,8 +139,9 @@
 		2E2586E22BB5FA4E006EF0BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1FBA08AE2C2B59060001DD7F /* ContentListViewController.swift */,
+				305F8EC92C4E849C00FBA138 /* ReviewsListViewController.swift */,
 				2E2586E32BB5FA58006EF0BB /* ContentDetailViewController.swift */,
+				1FBA08AE2C2B59060001DD7F /* ContentListViewController.swift */,
 				2E2586E42BB5FA58006EF0BB /* WishListViewController.swift */,
 			);
 			path = Controllers;
@@ -242,7 +251,7 @@
 				2E2586ED2BB5FA76006EF0BB /* Assets.xcassets in Resources */,
 				2E2586DC2BB5F9DB006EF0BB /* Main.storyboard in Resources */,
 				2E2586DF2BB5F9DB006EF0BB /* ContentCollectionViewCell.xib in Resources */,
-				C091EFFA2C3C1E790041F6BE /* ContentDetails.storyboard in Resources */,
+				1F05AD002C44B6B400E07B7E /* ContentDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8AD5472BEC3FC80012D740 /* ContentType.swift in Sources */,
+				1F05ACFF2C44A5A400E07B7E /* RateService.swift in Sources */,
 				1FBA08AF2C2B59060001DD7F /* ContentListViewController.swift in Sources */,
+				305F8ECA2C4E849C00FBA138 /* ReviewsListViewController.swift in Sources */,
 				1FF8CC6F2C1E4FA9009DC53D /* ContentService.swift in Sources */,
 				2E2586C82BB5F984006EF0BB /* AppDelegate.swift in Sources */,
 				2E2586D02BB5F9A2006EF0BB /* Content.swift in Sources */,
@@ -263,6 +274,7 @@
 				2E2586E12BB5F9DB006EF0BB /* ContentTableViewCell.swift in Sources */,
 				2E2586E62BB5FA58006EF0BB /* ContentDetailViewController.swift in Sources */,
 				1FF8CC712C1E53CE009DC53D /* ContentSearchResponse.swift in Sources */,
+				1F05ACFD2C449AF600E07B7E /* RateOptions.swift in Sources */,
 				2E2586E72BB5FA58006EF0BB /* WishListViewController.swift in Sources */,
 				2E2586D12BB5F9A2006EF0BB /* WishListService.swift in Sources */,
 			);
@@ -392,13 +404,14 @@
 		2E54F4BD2BB5F736007B6D93 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8G4UL7Z7AB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Movies/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Movies;
+				INFOPLIST_KEY_CFBundleDisplayName = SwiftFlix;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -421,13 +434,14 @@
 		2E54F4BE2BB5F736007B6D93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8G4UL7Z7AB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Movies/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Movies;
+				INFOPLIST_KEY_CFBundleDisplayName = SwiftFlix;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
