@@ -32,7 +32,7 @@ We were invited by the Instituto de Pesquisa Eldorado to participate in a Swift 
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Swift](https://developer.apple.com/swift/) installed on your mac computer. From your command line:
 
 ```bash
 # Clone this repository
