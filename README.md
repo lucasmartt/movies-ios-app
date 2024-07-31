@@ -1,9 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="Markdownify" width="200"></a>
-  <br>
-  SwiftFlix
+  <img src="ImgsForReadME/logo.png" alt="App Logo" width="200">
   <br>
 </h1>
 
@@ -18,7 +16,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![screenshot](ImgsForReadME/imgBase.png)
 
 ## Key Features
 
