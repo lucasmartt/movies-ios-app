@@ -16,7 +16,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](ImgsForReadME/imgBase.png)
+![screenshot](ImgsForReadME/imageBaseWithoutName.png)
 
 ## Key Features
 
